@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnpra0murgydy"]
+
+[ext_resource type="Script" path="res://Scripts/Rock.gd" id="1_5j50k"]
+[ext_resource type="Texture2D" uid="uid://u7kajs8dlw3g" path="res://Assets/Jupiner/FallingSpike.png" id="2_sm6xe"]
+[ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="3_3gwp6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2r82s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohehq"]
+radius = 60.8276
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svwt7"]
+size = Vector2(7, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu28t"]
+size = Vector2(7, 3.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tq2x"]
+size = Vector2(3, 3)
+
+[node name="Rock" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_2r82s")
+lock_rotation = true
+script = ExtResource("1_5j50k")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+position = Vector2(0, 173)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_ohehq")
+debug_color = Color(0.461973, 0.470521, 0.93348, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sm6xe")
+
+[node name="RockCollider" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_svwt7")
+
+[node name="JumpArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea"]
+position = Vector2(-0.5, -5.25)
+shape = SubResource("RectangleShape2D_eu28t")
+
+[node name="KillZone" parent="." instance=ExtResource("3_3gwp6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_5tq2x")
+debug_color = Color(0.588354, 0.0221177, 0, 0.42)
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="JumpArea" to="." method="_on_jump_area_body_entered"]
