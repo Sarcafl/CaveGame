@@ -6,10 +6,12 @@ extends CharacterBody2D
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var state_machine = $CharacterStateMachine
 
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction : Vector2 = Vector2.ZERO
+
+# Add has_double_jumped variable
+var has_double_jumped = false
 
 func _ready():
 	animation_tree.active = true
@@ -24,7 +26,7 @@ func _physics_process(delta):
 	direction = Input.get_vector("left", "right", "jump", "down")
 	
 	# Control whether to move or not to move
-	if direction.x != 0 && state_machine.check_if_can_move():
+	if direction.x != 0 and state_machine.check_if_can_move():
 		velocity.x = direction.x * speed
 		animation_player.play("walk")
 	else:
