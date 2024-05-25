@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://pid6ic1v8xt0"]
+
+[ext_resource type="AudioStream" uid="uid://bkflxjhupcs8g" path="res://Assets/Alfie Music and sfx/music/ambience_loop.ogg" id="1_iouhp"]
+
+[node name="Ambience" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_iouhp")
+autoplay = true
+bus = &"Music"
