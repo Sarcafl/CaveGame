@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u7kajs8dlw3g"
-path="res://.godot/imported/FallingSpike.png-4191da9c486eedaafeaa735cc6ce4771.ctex"
+uid="uid://bfpv7hxegx4lp"
+path="res://.godot/imported/CrumblingPlatform.png-cb5dded6553dc4ecfd62f318b2d8ced3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jupiner/FallingSpike.png"
-dest_files=["res://.godot/imported/FallingSpike.png-4191da9c486eedaafeaa735cc6ce4771.ctex"]
+source_file="res://Jupiner/envinronment/CrumblingPlatform.png"
+dest_files=["res://.godot/imported/CrumblingPlatform.png-cb5dded6553dc4ecfd62f318b2d8ced3.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dekpr1jetst0i"]
 
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_3oal4"]
-[ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="2_tybq2"]
 [ext_resource type="PackedScene" uid="uid://bcf7wjsuhca7t" path="res://Scenes/level_test.tscn" id="3_4m6gc"]
+[ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="4_fodcv"]
 [ext_resource type="Script" path="res://Scenes/UI_MANAGER.gd" id="4_nphxx"]
 
 [node name="Main" type="Node2D"]
@@ -16,21 +16,17 @@ position = Vector2(8, -4)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 
-[node name="Rock" parent="." instance=ExtResource("2_tybq2")]
-position = Vector2(-29, -247)
-
-[node name="Rock2" parent="." instance=ExtResource("2_tybq2")]
-position = Vector2(9, -247)
-
-[node name="Rock3" parent="." instance=ExtResource("2_tybq2")]
-position = Vector2(-11, -247)
-
-[node name="Level_test" parent="." instance=ExtResource("3_4m6gc")]
-position = Vector2(-167, 24)
-
 [node name="ui_manager" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_nphxx")
+
+[node name="Level_test" parent="." instance=ExtResource("3_4m6gc")]
+position = Vector2(-168, 22)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="CrumblyPlatform" parent="." instance=ExtResource("4_fodcv")]
+position = Vector2(-10, 19)

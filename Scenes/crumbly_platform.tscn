@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://byonwoiqossu3"]
+
+[ext_resource type="Script" path="res://Scripts/CrumblyPlatform.gd" id="1_c8k3q"]
+[ext_resource type="Texture2D" uid="uid://bfpv7hxegx4lp" path="res://Jupiner/envinronment/CrumblingPlatform.png" id="2_1y4vr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyd3i"]
+atlas = ExtResource("2_1y4vr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eibk2"]
+atlas = ExtResource("2_1y4vr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy2pn"]
+atlas = ExtResource("2_1y4vr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjq5d"]
+atlas = ExtResource("2_1y4vr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sapy3"]
+atlas = ExtResource("2_1y4vr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26v8f"]
+atlas = ExtResource("2_1y4vr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ev7v3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyd3i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eibk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy2pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjq5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sapy3")
+}],
+"loop": false,
+"name": &"falling",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26v8f")
+}],
+"loop": false,
+"name": &"stepped_on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3f80"]
+size = Vector2(28, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kco0d"]
+size = Vector2(26, 6)
+
+[node name="CrumblyPlatform" type="StaticBody2D"]
+position = Vector2(0, 8)
+script = ExtResource("1_c8k3q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ev7v3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_v3f80")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_kco0d")
+debug_color = Color(0.785241, 0.344522, 0.676144, 0.42)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -16,27 +16,19 @@ func _process(delta):
 		fall_timer -= delta
 		if fall_timer <= 0.0:
 			gravity_scale = 1.0  # Enable gravity when player is near and timer ends
-		else:
-			gravity_scale = 0.0  # Disable gravity when player is not near
 	else:
-		gravity_scale = 0.0
+		gravity_scale = 0.0  # Ensure gravity is disabled if player is not near
 
 func _on_detection_area_body_entered(body):
-	if body.name == "Guy": 
+	if body.name == "Guy":
 		player_near = true
 		fall_timer = fall_delay  # Reset the fall timer
 		print("I found the player")
 
 func _on_detection_area_body_exited(body):
-	if body.name == "Guy": 
+	if body.name == "Guy":
 		player_near = false
 		print("I lost the player")
-
-func dropROCK():
-	if player_near:
-		apply_central_impulse(Vector2(0, 180))  # Adjust magnitude as needed
-		player_near = false  # Reset the flag
-		print("Player is not near")
 
 func _on_jump_area_body_entered(body):
 	if body.name == "Guy":

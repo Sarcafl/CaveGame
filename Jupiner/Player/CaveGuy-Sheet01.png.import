@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2n7qfjnjp63p"
-path="res://.godot/imported/CaveGuy-Sheet01.png-4e7c948e66efc591ea68cbd5597f6c30.ctex"
+path="res://.godot/imported/CaveGuy-Sheet01.png-44ef94fe758d9e3f99e77d12270db68f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jupiner/CaveGuy-Sheet01.png"
-dest_files=["res://.godot/imported/CaveGuy-Sheet01.png-4e7c948e66efc591ea68cbd5597f6c30.ctex"]
+source_file="res://Jupiner/Player/CaveGuy-Sheet01.png"
+dest_files=["res://.godot/imported/CaveGuy-Sheet01.png-44ef94fe758d9e3f99e77d12270db68f.ctex"]
 
 [params]
 

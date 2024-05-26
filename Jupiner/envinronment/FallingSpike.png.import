@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ua07jk76ri5"
-path="res://.godot/imported/CaveGuy.png-b0dec6bfc927a21b0101060b0e1c1972.ctex"
+uid="uid://u7kajs8dlw3g"
+path="res://.godot/imported/FallingSpike.png-5c90d01f30f4b42ad66e0259734bad80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jupiner/CaveGuy.png"
-dest_files=["res://.godot/imported/CaveGuy.png-b0dec6bfc927a21b0101060b0e1c1972.ctex"]
+source_file="res://Jupiner/envinronment/FallingSpike.png"
+dest_files=["res://.godot/imported/FallingSpike.png-5c90d01f30f4b42ad66e0259734bad80.ctex"]
 
 [params]
 
