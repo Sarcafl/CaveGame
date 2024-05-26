@@ -1,7 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://byonwoiqossu3"]
+[gd_scene load_steps=21 format=3 uid="uid://byonwoiqossu3"]
 
 [ext_resource type="Script" path="res://Scripts/CrumblyPlatform.gd" id="1_c8k3q"]
 [ext_resource type="Texture2D" uid="uid://bfpv7hxegx4lp" path="res://Jupiner/envinronment/CrumblingPlatform.png" id="2_1y4vr"]
+[ext_resource type="AudioStream" uid="uid://cem4txcmrobsf" path="res://Assets/Alfie Music and sfx/sfx/environment_platform/environment_crumblingplatform_state02_01.wav" id="3_d8fbi"]
+[ext_resource type="AudioStream" uid="uid://c16w3ha56rayf" path="res://Assets/Alfie Music and sfx/sfx/environment_platform/environment_crumblingplatform_state01_01.wav" id="3_otltx"]
+[ext_resource type="AudioStream" uid="uid://cv8v5qqbeklvn" path="res://Assets/Alfie Music and sfx/sfx/environment_platform/environment_crumblingplatform_state02_02.wav" id="4_44c6w"]
+[ext_resource type="AudioStream" uid="uid://df0f5cirg8wne" path="res://Assets/Alfie Music and sfx/sfx/environment_platform/environment_crumblingplatform_state01_02.wav" id="4_jbe3y"]
+[ext_resource type="AudioStream" uid="uid://cfs335ftu3aqv" path="res://Assets/Alfie Music and sfx/sfx/environment_platform/environment_crumblingplatform_state01_03.wav" id="5_af271"]
+[ext_resource type="AudioStream" uid="uid://b47pak6g2feld" path="res://Assets/Alfie Music and sfx/sfx/environment_platform/environment_crumblingplatform_state02_03.wav" id="5_age2o"]
+[ext_resource type="AudioStream" uid="uid://7ll7vawptdyi" path="res://Assets/Alfie Music and sfx/sfx/environment_platform/environment_crumblingplatform_state02_04.wav" id="6_h2ybu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyd3i"]
 atlas = ExtResource("2_1y4vr")
@@ -69,6 +76,26 @@ size = Vector2(28, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kco0d"]
 size = Vector2(26, 6)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ivwgm"]
+streams_count = 3
+stream_0/stream = ExtResource("3_otltx")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_jbe3y")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_af271")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v5q4y"]
+streams_count = 4
+stream_0/stream = ExtResource("3_d8fbi")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_44c6w")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_age2o")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("6_h2ybu")
+stream_3/weight = 1.0
+
 [node name="CrumblyPlatform" type="StaticBody2D"]
 position = Vector2(0, 8)
 script = ExtResource("1_c8k3q")
@@ -87,6 +114,12 @@ position = Vector2(0, -4)
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_kco0d")
 debug_color = Color(0.785241, 0.344522, 0.676144, 0.42)
+
+[node name="audio_stepped_on" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ivwgm")
+
+[node name="audio_falling" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_v5q4y")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -6,9 +6,16 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine: CharacterStateMachine = $CharacterStateMachine
-@onready var jump_sound = $JumpSound
-@onready var footstep_dirt: AudioStreamPlayer2D = $FootstepDirt
+@onready var audio_jump_sound = $audio_jump_sound
+@onready var audio_jump_end_dirt = $audio_jump_end_dirt
+@onready var audio_jump_end_rock = $audio_jump_end_rock
+@onready var audio_jump_end_crystal = $audio_jump_end_crystal
+
+@onready var audio_footstep_dirt: AudioStreamPlayer2D = $audio_footstep_dirt
+@onready var audio_footstep_rock: AudioStreamPlayer2D = $audio_footstep_rock
+@onready var audio_footstep_crystal: AudioStreamPlayer2D = $audio_footstep_crystal
 @onready var footstep_timer: Timer = $FootstepTimer
+@onready var footstep_position: Node = $FootPosition
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: Vector2 = Vector2.ZERO
@@ -27,7 +34,6 @@ func _physics_process(delta):
 	if direction.x != 0 and state_machine.check_if_can_move():
 		velocity.x = direction.x * speed
 		if is_on_floor() and footstep_timer.is_stopped():
-			play_footstep_sound()
 			footstep_timer.start()  # Start or restart the timer
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
@@ -46,19 +52,43 @@ func update_facing_direction():
 		sprite.flip_h = false
 	elif direction.x < 0:
 		sprite.flip_h = true
-
+	
 func play_footstep_sound():
-	if not footstep_dirt.playing:
-		footstep_dirt.play()
+	var tile_map = get_tree().current_scene.get_node("level_layout")
+	var footstepGlobalPosition = footstep_position.global_position
+	var footstepPositionRelativeToTileMap = tile_map.to_local(footstepGlobalPosition)
+	var characterCellCoordinates = tile_map.local_to_map(footstepPositionRelativeToTileMap)
+	var tileId = tile_map.get_cell_tile_data(0, characterCellCoordinates)
+	
+	if tileId:
+		var data = tileId.get_custom_data("TerrainType")
+		match data:
+			"Grass": audio_footstep_dirt.play()
+			"Dirt": audio_footstep_dirt.play()
+			"Rock": audio_footstep_rock.play()
+			"Crystal": audio_footstep_crystal.play()
 
 func play_jump_sound():
-	if not jump_sound.playing:
-		jump_sound.play()
+	audio_jump_sound.play()
+
+func on_jump_end():
+	var tile_map = get_tree().current_scene.get_node("level_layout")
+	var footstepGlobalPosition = footstep_position.global_position
+	var footstepPositionRelativeToTileMap = tile_map.to_local(footstepGlobalPosition)
+	var characterCellCoordinates = tile_map.local_to_map(footstepPositionRelativeToTileMap)
+	var tileId = tile_map.get_cell_tile_data(0, characterCellCoordinates)
+	
+	if tileId:
+		var data = tileId.get_custom_data("TerrainType")
+		match data:
+			"Grass": audio_jump_end_dirt.play()
+			"Dirt": audio_jump_end_dirt.play()
+			"Rock": audio_jump_end_rock.play()
+			"Crystal": audio_jump_end_crystal.play()
 
 func reset_wall_jump_count():
 	wall_jump_count = 0
 
 func _on_footstep_timer_timeout():
 	if is_on_floor() and abs(velocity.x) > 0.1:
-		play_footstep_sound()
 		footstep_timer.start()  # Restart the timer for continuous footstep sounds
