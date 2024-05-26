@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckyks25nk57vi"]
+
+[ext_resource type="Texture2D" uid="uid://dj13ywacny4rk" path="res://Jupiner/Candle/CandleMask-sheet.png" id="1_bkyud"]
+[ext_resource type="Script" path="res://Scenes/AnimatedMask.gd" id="2_4jxwe"]
+
+[node name="Candle" type="Sprite2D"]
+clip_children = 1
+position = Vector2(-1, -4)
+scale = Vector2(2, 2)
+texture = ExtResource("1_bkyud")
+hframes = 5
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 300)
+script = ExtResource("2_4jxwe")
+speed = 4.0
