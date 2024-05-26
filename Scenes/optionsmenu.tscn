@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4gyvx0dca5u8"]
+
+[ext_resource type="Script" path="res://Scenes/optionsmenu.gd" id="1_4ecqf"]
+[ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="2_iqhq7"]
+[ext_resource type="Texture2D" uid="uid://b0h6g7mvk4t6v" path="res://Jupiner/Menu_Artwork.jpg" id="2_uqmx4"]
+[ext_resource type="Script" path="res://Scenes/soundslider.gd" id="3_l2iwj"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -33.0
+offset_right = -37.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ecqf")
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 84.0
+offset_right = 116.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuArtwork" type="Sprite2D" parent="Panel"]
+position = Vector2(90, -349)
+scale = Vector2(1.4787, 1.24211)
+texture = ExtResource("2_uqmx4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="SFX" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqhq7")
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/SFX"]
+layout_mode = 2
+offset_left = 217.0
+offset_top = 3.0
+offset_right = 359.0
+offset_bottom = 19.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_l2iwj")
+bus_name = "SFX"
+
+[node name="MUSIC" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqhq7")
+text = "MUSIC"
+
+[node name="HSlider2" type="HSlider" parent="MarginContainer/VBoxContainer/MUSIC"]
+layout_mode = 2
+offset_left = 218.0
+offset_top = 5.0
+offset_right = 360.0
+offset_bottom = 21.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_l2iwj")
+bus_name = "Music"
+
+[node name="MASTER" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqhq7")
+text = "MASTER VOLUME"
+
+[node name="HSlider3" type="HSlider" parent="MarginContainer/VBoxContainer/MASTER"]
+layout_mode = 2
+offset_left = 218.0
+offset_top = 6.0
+offset_right = 360.0
+offset_bottom = 22.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_l2iwj")
+bus_name = "Master"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqhq7")
+text = "Credits"
+
+[node name="BACK" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqhq7")
+text = "BACK"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BACK" to="." method="_on_back_pressed"]
