@@ -1,8 +1,13 @@
 extends Control
 
+@onready var pause_menu = $PauseMenu
 
+func _ready():
+	pause_menu.hide() 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if Input.is_action_just_pressed("esc"):
-		get_tree().change_scene_to_file("res://Scenes/optionsmenu.tscn")
+func _input(event):
+	if event.is_action_pressed("esc"): 
+		if not pause_menu.is_visible():
+			pause_menu.show_pause_menu()
+		else:
+			pause_menu._on_resume_pressed()

@@ -24,6 +24,10 @@ Ambience="*res://Scenes/ambience.tscn"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 jump={

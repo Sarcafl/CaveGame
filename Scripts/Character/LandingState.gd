@@ -6,7 +6,7 @@ class_name LandingState
 @export var ground_state: State
 @export var wall_land_animation_name: String = "wall_land"
 
-func state_process(delta):
+func state_process(_delta):
 	if character.is_on_floor():
 		# Do nothing specific for landing state process
 		pass
