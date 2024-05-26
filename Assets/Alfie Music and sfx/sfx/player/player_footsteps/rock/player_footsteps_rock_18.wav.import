@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bn8xxtrttyr3j"
+path="res://.godot/imported/player_footsteps_rock_18.wav-48d9b86fdb1255abd24cda09e487c661.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_18.wav"
+dest_files=["res://.godot/imported/player_footsteps_rock_18.wav-48d9b86fdb1255abd24cda09e487c661.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dekpr1jetst0i"]
 
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_3oal4"]
-[ext_resource type="PackedScene" uid="uid://bcf7wjsuhca7t" path="res://Scenes/level_test.tscn" id="3_4m6gc"]
+[ext_resource type="PackedScene" uid="uid://duiw6db2u8gyx" path="res://Scenes/Levels/level_one.tscn" id="4_e0and"]
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="4_fodcv"]
 [ext_resource type="Script" path="res://Scenes/UI_MANAGER.gd" id="4_nphxx"]
 
@@ -9,12 +9,15 @@
 
 [node name="Guy" parent="." instance=ExtResource("1_3oal4")]
 z_index = 10
-position = Vector2(-224, 10)
+position = Vector2(-28, -79)
 
 [node name="Camera2D" type="Camera2D" parent="Guy"]
 position = Vector2(8, -4)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
+
+[node name="CrumblyPlatform" parent="." instance=ExtResource("4_fodcv")]
+position = Vector2(105, -76)
 
 [node name="ui_manager" type="Control" parent="."]
 layout_mode = 3
@@ -23,10 +26,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_nphxx")
 
-[node name="Level_test" parent="." instance=ExtResource("3_4m6gc")]
-position = Vector2(-168, 22)
-
 [node name="Node" type="Node" parent="."]
 
-[node name="CrumblyPlatform" parent="." instance=ExtResource("4_fodcv")]
-position = Vector2(-10, 19)
+[node name="level_layout" parent="." instance=ExtResource("4_e0and")]

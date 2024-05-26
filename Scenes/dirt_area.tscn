@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bvo6frkokq8ux"]
+
+[node name="DirtArea" type="Area2D"]

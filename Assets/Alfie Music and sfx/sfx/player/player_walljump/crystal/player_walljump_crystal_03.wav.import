@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bd27lti24lydt"
+path="res://.godot/imported/player_walljump_crystal_03.wav-4a0a20c543040bd121a25f349aee2ef5.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/player/player_walljump/crystal/player_walljump_crystal_03.wav"
+dest_files=["res://.godot/imported/player_walljump_crystal_03.wav-4a0a20c543040bd121a25f349aee2ef5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

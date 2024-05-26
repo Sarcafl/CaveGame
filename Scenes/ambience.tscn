@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://bkflxjhupcs8g" path="res://Assets/Alfie Music and sfx/music/ambience_loop.ogg" id="1_iouhp"]
 
-[node name="Ambience" type="AudioStreamPlayer2D"]
+[node name="Ambience" type="AudioStreamPlayer"]
 stream = ExtResource("1_iouhp")
 autoplay = true
 bus = &"Music"

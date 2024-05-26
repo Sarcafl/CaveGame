@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://l6fxw2r7p7dj"
+path="res://.godot/imported/player_footsteps_crystal_12.wav-56853056fd1e64c054e8469298f86254.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_12.wav"
+dest_files=["res://.godot/imported/player_footsteps_crystal_12.wav-56853056fd1e64c054e8469298f86254.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

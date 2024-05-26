@@ -1,4 +1,3 @@
-# AirState.gd
 extends State
 
 class_name AirState
@@ -39,11 +38,9 @@ func state_input(event: InputEvent):
 			double_jump()
 
 func on_enter():
-	print("Entering AirState")
 	fall_timer = 0.0  # Reset the fall timer
 
 func on_exit():
-	print("Exiting AirState")
 	if next_state == landing_state:
 		playback.travel(landing_animation)
 		has_double_jumped = false
@@ -54,6 +51,7 @@ func double_jump():
 	character.velocity.y = double_jump_velocity
 	playback.travel(double_jump_animation)
 	has_double_jumped = true
+	character.play_jump_sound()  # Play jump sound
 
 func perform_wall_jump():
 	character.velocity.y = jump_velocity
@@ -65,3 +63,4 @@ func perform_wall_jump():
 		character.velocity.x = -sign(character.velocity.x) * wallJump_push
 	playback.travel(jump_animation)
 	is_wall_sliding = false
+	character.play_jump_sound()  # Play jump sound

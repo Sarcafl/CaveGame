@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvdoud54nl0p8"
+path="res://.godot/imported/player_footsteps_dirt_08.wav-14b8135434a85e8a0c4b62e7bc0bfe1a.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_08.wav"
+dest_files=["res://.godot/imported/player_footsteps_dirt_08.wav-14b8135434a85e8a0c4b62e7bc0bfe1a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

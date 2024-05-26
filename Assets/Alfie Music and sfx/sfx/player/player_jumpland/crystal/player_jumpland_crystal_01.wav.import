@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dm6p7vcewdxwn"
+path="res://.godot/imported/player_jumpland_crystal_01.wav-11ff4b0edc412b868caa7cca4efad49c.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/crystal/player_jumpland_crystal_01.wav"
+dest_files=["res://.godot/imported/player_jumpland_crystal_01.wav-11ff4b0edc412b868caa7cca4efad49c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

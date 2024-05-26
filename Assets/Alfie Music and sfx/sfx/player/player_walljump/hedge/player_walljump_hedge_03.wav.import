@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6vrro8r1w5y0"
+path="res://.godot/imported/player_walljump_hedge_03.wav-b75ee4e6aa96617093b64b206343e3cd.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/player/player_walljump/hedge/player_walljump_hedge_03.wav"
+dest_files=["res://.godot/imported/player_walljump_hedge_03.wav-b75ee4e6aa96617093b64b206343e3cd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

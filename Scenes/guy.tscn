@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://d3ve7kcm0tm6g"]
+[gd_scene load_steps=125 format=3 uid="uid://d3ve7kcm0tm6g"]
 
 [ext_resource type="Script" path="res://Scripts/Character/CharacterBody2D.gd" id="1_otn7k"]
 [ext_resource type="Texture2D" uid="uid://2n7qfjnjp63p" path="res://Jupiner/Player/CaveGuy-Sheet01.png" id="2_8cab8"]
@@ -10,9 +10,75 @@
 [ext_resource type="Script" path="res://Scripts/Character/AirState.gd" id="8_j3nvv"]
 [ext_resource type="Script" path="res://Scripts/Character/LandingState.gd" id="9_j3trq"]
 [ext_resource type="Script" path="res://Scripts/Character/StateDebugLabel.gd" id="10_0y2rs"]
+[ext_resource type="AudioStream" uid="uid://ba2nn1agkvh7f" path="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_01.wav" id="11_qapw3"]
+[ext_resource type="AudioStream" uid="uid://bi55c82e72ivv" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_01.wav" id="12_5pea3"]
+[ext_resource type="AudioStream" uid="uid://c2btrwttkioi1" path="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_02.wav" id="12_8v0hl"]
+[ext_resource type="AudioStream" uid="uid://dmco5xy4nmo5w" path="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_03.wav" id="13_fo2av"]
+[ext_resource type="AudioStream" uid="uid://bleuw2trcjn2l" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_02.wav" id="13_jbdgp"]
+[ext_resource type="AudioStream" uid="uid://umvemx8fqswo" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_11.wav" id="14_pa4cj"]
+[ext_resource type="AudioStream" uid="uid://b3hk0k7gr0ac0" path="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_04.wav" id="14_pi4bk"]
+[ext_resource type="AudioStream" uid="uid://832tglrjupld" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_12.wav" id="15_27q4p"]
+[ext_resource type="AudioStream" uid="uid://dmr0jltwbdtu" path="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_05.wav" id="15_e6qyd"]
+[ext_resource type="AudioStream" uid="uid://ndxt2sl7g64" path="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_06.wav" id="16_25unw"]
+[ext_resource type="AudioStream" uid="uid://dvibqai3y28q4" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_13.wav" id="16_xxp4d"]
+[ext_resource type="AudioStream" uid="uid://6ewoe2ccmors" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_14.wav" id="17_dy0n2"]
+[ext_resource type="AudioStream" uid="uid://bxv54kooxst2k" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_15.wav" id="18_xp2hf"]
+[ext_resource type="AudioStream" uid="uid://br61pm4t0krm1" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_16.wav" id="19_khefb"]
+[ext_resource type="AudioStream" uid="uid://bawva43erwt7y" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_17.wav" id="20_l57tb"]
+[ext_resource type="AudioStream" uid="uid://dmjnwhb7gj6sr" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_18.wav" id="21_wn84d"]
+[ext_resource type="AudioStream" uid="uid://cyo4w5mgdkwk3" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_19.wav" id="22_lptqx"]
+[ext_resource type="AudioStream" uid="uid://b6ibc8u63baax" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_20.wav" id="23_kufpv"]
+[ext_resource type="AudioStream" uid="uid://bxg27gsoftpx" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_03.wav" id="24_ock41"]
+[ext_resource type="AudioStream" uid="uid://b7hmo60gw8g6g" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_21.wav" id="25_1hq44"]
+[ext_resource type="AudioStream" uid="uid://b75ea112udjwo" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_22.wav" id="26_njio7"]
+[ext_resource type="AudioStream" uid="uid://37d46ap2s6nt" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_23.wav" id="27_jrk2l"]
+[ext_resource type="AudioStream" uid="uid://dq3j2gpssrd8s" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_24.wav" id="28_gxy32"]
+[ext_resource type="AudioStream" uid="uid://co6g6km0qi1fq" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_04.wav" id="29_fud0n"]
+[ext_resource type="AudioStream" uid="uid://dl6quk40ogwvk" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_05.wav" id="30_akj8u"]
+[ext_resource type="AudioStream" uid="uid://vas4oc6njfa2" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_06.wav" id="31_5ln7v"]
+[ext_resource type="AudioStream" uid="uid://dgorhqhfja38g" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_07.wav" id="32_ursw8"]
+[ext_resource type="AudioStream" uid="uid://cvdoud54nl0p8" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_08.wav" id="33_iqr30"]
+[ext_resource type="AudioStream" uid="uid://cu4gubuee8i2j" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_09.wav" id="34_fc41y"]
+[ext_resource type="AudioStream" uid="uid://nmyoctuwa8nm" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_10.wav" id="35_rjnt1"]
+[ext_resource type="AudioStream" uid="uid://cdfk7glbg08mx" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_01.wav" id="36_tfi3k"]
+[ext_resource type="AudioStream" uid="uid://h3slutt8b62i" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_02.wav" id="37_d3uvj"]
+[ext_resource type="AudioStream" uid="uid://6vx8qh8b2hg2" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_11.wav" id="38_xake2"]
+[ext_resource type="AudioStream" uid="uid://cpefjf63wqe8p" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_12.wav" id="39_ubhi7"]
+[ext_resource type="AudioStream" uid="uid://dtwrophodvh57" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_13.wav" id="40_44rrs"]
+[ext_resource type="AudioStream" uid="uid://bpapqvd3de4cy" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_14.wav" id="41_3uvbv"]
+[ext_resource type="AudioStream" uid="uid://dh2uddnwo2asv" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_15.wav" id="42_i7exc"]
+[ext_resource type="AudioStream" uid="uid://dgecrfsp5gajp" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_16.wav" id="43_tbtj3"]
+[ext_resource type="AudioStream" uid="uid://bc7do0arqrhxd" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_17.wav" id="44_i3otn"]
+[ext_resource type="AudioStream" uid="uid://bn8xxtrttyr3j" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_18.wav" id="45_cey8x"]
+[ext_resource type="AudioStream" uid="uid://b8hrf4a0a6xra" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_19.wav" id="46_aq0ec"]
+[ext_resource type="AudioStream" uid="uid://kv5rdy3l7lya" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_20.wav" id="47_c6gn6"]
+[ext_resource type="AudioStream" uid="uid://wgw4m0456wd7" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_03.wav" id="48_u3i08"]
+[ext_resource type="AudioStream" uid="uid://dwg2ad2yji6i5" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_04.wav" id="49_btg2u"]
+[ext_resource type="AudioStream" uid="uid://d2055rdrtoto2" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_05.wav" id="50_5oxcv"]
+[ext_resource type="AudioStream" uid="uid://d2i3034g4qlca" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_06.wav" id="51_tcnrp"]
+[ext_resource type="AudioStream" uid="uid://cug333sogsa0o" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_07.wav" id="52_qa8sc"]
+[ext_resource type="AudioStream" uid="uid://wwknplb5nokx" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_08.wav" id="53_88yix"]
+[ext_resource type="AudioStream" uid="uid://cwlq5ulfuqesy" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_09.wav" id="54_4oew4"]
+[ext_resource type="AudioStream" uid="uid://dtr1o0eq3es8m" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/rock/player_footsteps_rock_10.wav" id="55_s5enu"]
+[ext_resource type="AudioStream" uid="uid://ch57q3g5gagdr" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_06.wav" id="56_2okl5"]
+[ext_resource type="AudioStream" uid="uid://danayjxwtdpf0" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_07.wav" id="57_5d64q"]
+[ext_resource type="AudioStream" uid="uid://cflgqdw208884" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_08.wav" id="58_wso3r"]
+[ext_resource type="AudioStream" uid="uid://6f13cjs83fi0" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_09.wav" id="59_ekypv"]
+[ext_resource type="AudioStream" uid="uid://x2m7kk4ufmjf" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_10.wav" id="60_nuu4w"]
+[ext_resource type="AudioStream" uid="uid://c1klmvgi63tsf" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_11.wav" id="61_arwjr"]
+[ext_resource type="AudioStream" uid="uid://l6fxw2r7p7dj" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_12.wav" id="62_buhua"]
+[ext_resource type="AudioStream" uid="uid://bm1rlhihede6u" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_13.wav" id="63_5gdkt"]
+[ext_resource type="AudioStream" uid="uid://ce6kqe1nqcuus" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_14.wav" id="64_yar01"]
+[ext_resource type="AudioStream" uid="uid://yelea4wakyxt" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_15.wav" id="65_b2361"]
+[ext_resource type="AudioStream" uid="uid://cmd87x67n8oys" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_16.wav" id="66_aa5ay"]
+[ext_resource type="AudioStream" uid="uid://c3qswyro84it6" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_01.wav" id="67_601ri"]
+[ext_resource type="AudioStream" uid="uid://cqdec46ddqsbp" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_02.wav" id="68_dq4mb"]
+[ext_resource type="AudioStream" uid="uid://32bnt03j4t3q" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_03.wav" id="69_sg344"]
+[ext_resource type="AudioStream" uid="uid://iyyngsgctg0d" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_04.wav" id="70_72lj3"]
+[ext_resource type="AudioStream" uid="uid://b84w0ua6vemcs" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_05.wav" id="71_s58ul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwxqy"]
-size = Vector2(13, 25.5)
+size = Vector2(13, 21)
 
 [sub_resource type="Animation" id="Animation_gbbu6"]
 length = 0.001
@@ -660,13 +726,161 @@ states/wall_land/position = Vector2(785, 16)
 transitions = ["move", "jump", SubResource("AnimationNodeStateMachineTransition_pysm0"), "jump", "jump_end", SubResource("AnimationNodeStateMachineTransition_pg1et"), "jump_end", "move", SubResource("AnimationNodeStateMachineTransition_kfdyr"), "jump", "double_jump", SubResource("AnimationNodeStateMachineTransition_fifjc"), "double_jump", "jump_end", SubResource("AnimationNodeStateMachineTransition_ot8lx"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_sjk5b"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_e1na2"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_owp63"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_3ywi6"), "jump", "wall_hang", SubResource("AnimationNodeStateMachineTransition_dmji0"), "wall_hang", "free_fall", SubResource("AnimationNodeStateMachineTransition_37dty"), "free_fall", "move", SubResource("AnimationNodeStateMachineTransition_eibaw"), "jump_end", "wall_land", SubResource("AnimationNodeStateMachineTransition_eihsm"), "wall_land", "wall_hang", SubResource("AnimationNodeStateMachineTransition_e4s8p"), "free_fall", "wall_land", SubResource("AnimationNodeStateMachineTransition_82h5x"), "free_fall", "wall_hang", SubResource("AnimationNodeStateMachineTransition_543b5"), "wall_hang", "jump", SubResource("AnimationNodeStateMachineTransition_ty0ar"), "free_fall", "jump_end", SubResource("AnimationNodeStateMachineTransition_dp47o")]
 graph_offset = Vector2(-144, -109)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6885x"]
+streams_count = 6
+stream_0/stream = ExtResource("11_qapw3")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("12_8v0hl")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("13_fo2av")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("14_pi4bk")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("15_e6qyd")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("16_25unw")
+stream_5/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ik1qu"]
+streams_count = 24
+stream_0/stream = ExtResource("12_5pea3")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("13_jbdgp")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("24_ock41")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("29_fud0n")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("30_akj8u")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("31_5ln7v")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("32_ursw8")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("33_iqr30")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("34_fc41y")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("35_rjnt1")
+stream_9/weight = 1.0
+stream_10/stream = ExtResource("14_pa4cj")
+stream_10/weight = 1.0
+stream_11/stream = ExtResource("15_27q4p")
+stream_11/weight = 1.0
+stream_12/stream = ExtResource("16_xxp4d")
+stream_12/weight = 1.0
+stream_13/stream = ExtResource("17_dy0n2")
+stream_13/weight = 1.0
+stream_14/stream = ExtResource("18_xp2hf")
+stream_14/weight = 1.0
+stream_15/stream = ExtResource("19_khefb")
+stream_15/weight = 1.0
+stream_16/stream = ExtResource("20_l57tb")
+stream_16/weight = 1.0
+stream_17/stream = ExtResource("21_wn84d")
+stream_17/weight = 1.0
+stream_18/stream = ExtResource("22_lptqx")
+stream_18/weight = 1.0
+stream_19/stream = ExtResource("23_kufpv")
+stream_19/weight = 1.0
+stream_20/stream = ExtResource("25_1hq44")
+stream_20/weight = 1.0
+stream_21/stream = ExtResource("26_njio7")
+stream_21/weight = 1.0
+stream_22/stream = ExtResource("27_jrk2l")
+stream_22/weight = 1.0
+stream_23/stream = ExtResource("28_gxy32")
+stream_23/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1wlop"]
+streams_count = 20
+stream_0/stream = ExtResource("36_tfi3k")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("37_d3uvj")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("48_u3i08")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("49_btg2u")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("50_5oxcv")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("51_tcnrp")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("52_qa8sc")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("53_88yix")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("54_4oew4")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("55_s5enu")
+stream_9/weight = 1.0
+stream_10/stream = ExtResource("38_xake2")
+stream_10/weight = 1.0
+stream_11/stream = ExtResource("39_ubhi7")
+stream_11/weight = 1.0
+stream_12/stream = ExtResource("40_44rrs")
+stream_12/weight = 1.0
+stream_13/stream = ExtResource("41_3uvbv")
+stream_13/weight = 1.0
+stream_14/stream = ExtResource("42_i7exc")
+stream_14/weight = 1.0
+stream_15/stream = ExtResource("43_tbtj3")
+stream_15/weight = 1.0
+stream_16/stream = ExtResource("44_i3otn")
+stream_16/weight = 1.0
+stream_17/stream = ExtResource("45_cey8x")
+stream_17/weight = 1.0
+stream_18/stream = ExtResource("46_aq0ec")
+stream_18/weight = 1.0
+stream_19/stream = ExtResource("47_c6gn6")
+stream_19/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qlk5h"]
+streams_count = 21
+stream_0/weight = 1.0
+stream_1/weight = 1.0
+stream_2/weight = 1.0
+stream_3/weight = 1.0
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("67_601ri")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("68_dq4mb")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("69_sg344")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("70_72lj3")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("71_s58ul")
+stream_9/weight = 1.0
+stream_10/stream = ExtResource("56_2okl5")
+stream_10/weight = 1.0
+stream_11/stream = ExtResource("57_5d64q")
+stream_11/weight = 1.0
+stream_12/stream = ExtResource("58_wso3r")
+stream_12/weight = 1.0
+stream_13/stream = ExtResource("59_ekypv")
+stream_13/weight = 1.0
+stream_14/stream = ExtResource("60_nuu4w")
+stream_14/weight = 1.0
+stream_15/stream = ExtResource("61_arwjr")
+stream_15/weight = 1.0
+stream_16/stream = ExtResource("62_buhua")
+stream_16/weight = 1.0
+stream_17/stream = ExtResource("63_5gdkt")
+stream_17/weight = 1.0
+stream_18/stream = ExtResource("64_yar01")
+stream_18/weight = 1.0
+stream_19/stream = ExtResource("65_b2361")
+stream_19/weight = 1.0
+stream_20/stream = ExtResource("66_aa5ay")
+stream_20/weight = 1.0
+
 [node name="Guy" type="CharacterBody2D"]
 collision_mask = 5
 script = ExtResource("1_otn7k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0.5, 2.25)
+position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_mwxqy")
 debug_color = Color(0.805208, 0.303287, 0.722757, 0.42)
 
@@ -716,6 +930,7 @@ script = ExtResource("9_j3trq")
 ground_state = NodePath("../Ground")
 
 [node name="StateDebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
+visible = false
 offset_top = -74.0
 offset_right = 116.0
 offset_bottom = -51.0
@@ -724,4 +939,24 @@ text = "State:"
 script = ExtResource("10_0y2rs")
 state_machine = NodePath("../CharacterStateMachine")
 
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_6885x")
+bus = &"SFX"
+
+[node name="FootstepGrass" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ik1qu")
+bus = &"SFX"
+
+[node name="FootstepDirt" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_1wlop")
+bus = &"SFX"
+
+[node name="FootstepCrystal" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_qlk5h")
+bus = &"SFX"
+
+[node name="FootstepTimer" type="Timer" parent="."]
+wait_time = 0.05
+
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Landing" method="_on_animation_tree_animation_finished"]
+[connection signal="timeout" from="FootstepTimer" to="." method="_on_footstep_timer_timeout"]

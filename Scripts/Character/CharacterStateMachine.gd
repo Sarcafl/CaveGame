@@ -43,7 +43,6 @@ func switch_states(new_state: State):
 		current_state.next_state = null
 	
 	current_state = new_state
-	print("Switching to state: ", current_state)
 	if current_state != null:
 		current_state.on_enter()
 	else:

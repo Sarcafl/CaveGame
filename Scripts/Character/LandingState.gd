@@ -1,4 +1,3 @@
-# LandingState.gd
 extends State
 
 class_name LandingState
@@ -9,22 +8,21 @@ class_name LandingState
 
 func state_process(delta):
 	if character.is_on_floor():
-		print("In LandingState on the floor")
+		# Do nothing specific for landing state process
+		pass
 
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == landing_animation_name:
-		print("Landing animation finished, switching to GroundState")
 		character.state_machine.switch_states(ground_state)
 	elif anim_name == wall_land_animation_name:
-		print("Wall land animation finished, switching to GroundState")
 		character.state_machine.switch_states(ground_state)
 
 func on_enter():
-	print("Entering LandingState")
 	if character.is_on_wall():
 		playback.travel(wall_land_animation_name)
 	else:
 		playback.travel(landing_animation_name)
 
 func on_exit():
-	print("Exiting LandingState")
+	# Do nothing specific on exit
+	pass

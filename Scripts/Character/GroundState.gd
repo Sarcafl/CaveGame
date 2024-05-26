@@ -1,10 +1,9 @@
-# GroundState.gd
 extends State
 
 class_name GroundState
 
 @export var wallJump_push = 800
-@export var jump_velocity: float = -300
+@export var jump_velocity: float = -200
 @export var air_state: State
 @export var landing_state: State
 @export var jump_animation: String = "jump"
@@ -50,11 +49,13 @@ func perform_wall_jump():
 			character.velocity.x = -sign(character.velocity.x) * wallJump_push
 		playback.travel(jump_animation)
 	is_wall_sliding = false
+	character.play_jump_sound()  # Play jump sound
 
 func jump():
 	character.velocity.y = jump_velocity
 	playback.travel(jump_animation)
 	is_wall_sliding = false
+	character.play_jump_sound()  # Play jump sound
 
 func wall_slide(delta):
 	if character.is_on_wall() and not character.is_on_floor():

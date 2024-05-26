@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmco5xy4nmo5w"
+path="res://.godot/imported/player_jump_03.wav-9ee82bfef0577f23a1f803851bdf2d86.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_03.wav"
+dest_files=["res://.godot/imported/player_jump_03.wav-9ee82bfef0577f23a1f803851bdf2d86.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
