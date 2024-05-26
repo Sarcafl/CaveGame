@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dekpr1jetst0i"]
+[gd_scene load_steps=8 format=3 uid="uid://dekpr1jetst0i"]
 
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_3oal4"]
 [ext_resource type="PackedScene" uid="uid://duiw6db2u8gyx" path="res://Scenes/Levels/level_one.tscn" id="4_e0and"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/UI_MANAGER.gd" id="4_nphxx"]
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="4_udvca"]
 [ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="4_x1fpq"]
+[ext_resource type="PackedScene" uid="uid://ckyks25nk57vi" path="res://Jupiner/Candle/candle.tscn" id="5_yqrv2"]
 
 [node name="Main" type="Node2D"]
 
@@ -77,6 +78,10 @@ text = "RESUME"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_udvca")
 text = "QUIT"
+
+[node name="Candle" parent="Guy/Camera2D" instance=ExtResource("5_yqrv2")]
+z_index = -1
+position = Vector2(-9, 0)
 
 [node name="CrumblyPlatform" parent="." instance=ExtResource("4_fodcv")]
 position = Vector2(105, -76)
