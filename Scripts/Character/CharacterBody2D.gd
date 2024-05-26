@@ -1,46 +1,87 @@
 extends CharacterBody2D
 
-@export var speed : float = 200.0
-@onready var animation_player = $AnimationPlayer
-@onready var sprite : Sprite2D = $Sprite2D
-@onready var animation_tree : AnimationTree = $AnimationTree
-@onready var state_machine = $CharacterStateMachine
+# Exposed variables
+@export var speed: float = 160
+@export var jump_force: float = -180
+@export var double_jump_force: float = -180
+@export var gravity: float = 800.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var direction : Vector2 = Vector2.ZERO
+# Internal variables
+var is_attached_to_wall: bool = false
+var has_double_jumped: bool = false
 
-# Add has_double_jumped variable
-var has_double_jumped = false
+# Animation
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite = $Sprite2D
 
 func _ready():
-	animation_tree.active = true
+	# Initialize animation
+	animation_player.play("idle")
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
+	# Apply gravity
+	if !is_attached_to_wall:
 		velocity.y += gravity * delta
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction = Input.get_vector("left", "right", "jump", "down")
-	
-	# Control whether to move or not to move
-	if direction.x != 0 and state_machine.check_if_can_move():
-		velocity.x = direction.x * speed
-		animation_player.play("walk")
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		animation_player.play("idle")
+	# Move the character
 	move_and_slide()
-	update_animation_parameters()
-	update_facing_direction()
-	
-func update_animation_parameters():
-	animation_tree.set("parameters/Move/blend_position", direction.x)
 
-func update_facing_direction():
-	if direction.x > 0:
-		sprite.flip_h = false
-	elif direction.x < 0:
-		sprite.flip_h = true
+	# Update sprite flipping
+	if velocity.x != 0:
+		sprite.flip_h = velocity.x < 0
+
+	# Check for wall contact
+	is_attached_to_wall = is_on_wall()
+
+	# Update animations
+	update_animations()
+
+	# Handle input
+	handle_input()
+
+func handle_input():
+	# Movement input
+	var move_input = Input.get_action_strength("right") - Input.get_action_strength("left")
+	velocity.x = move_input * speed
+
+	# Jump input
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			jump()
+		elif is_attached_to_wall:
+			wall_jump()
+		elif !has_double_jumped:
+			double_jump()
+
+func jump():
+	velocity.y = jump_force
+	animation_player.play("jump")
+
+func double_jump():
+	velocity.y = double_jump_force
+	has_double_jumped = true
+	animation_player.play("double_jump")
+
+func wall_jump():
+	velocity.y = jump_force
+	if sprite.flip_h:
+		velocity.x = speed
+	else:
+		velocity.x = -speed
+	animation_player.play("wall_jump")
+
+func update_animations():
+	if is_on_floor():
+		if velocity.x == 0:
+			animation_player.play("idle")
+		else:
+			animation_player.play("walk")
+	else:
+		if velocity.y < 0:
+			animation_player.play("jump")
+		elif velocity.y > 0:
+			animation_player.play("freefall")
+		elif is_attached_to_wall:
+			animation_player.play("wall_hold")
+		else:
+			animation_player.play("freefall")

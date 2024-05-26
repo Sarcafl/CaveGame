@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cnpra0murgydy"]
 
 [ext_resource type="Script" path="res://Scripts/Rock.gd" id="1_5j50k"]
-[ext_resource type="Texture2D" uid="uid://u7kajs8dlw3g" path="res://Assets/Jupiner/FallingSpike.png" id="2_sm6xe"]
+[ext_resource type="Texture2D" uid="uid://u7kajs8dlw3g" path="res://Jupiner/FallingSpike.png" id="2_sm6xe"]
 [ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="3_3gwp6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2r82s"]

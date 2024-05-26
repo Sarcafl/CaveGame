@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dao8u5cryoc1g"
-path="res://.godot/imported/CaveGuy-WallJump.png-e609d62e4cc2ae2c47612aa79a7ce069.ctex"
+uid="uid://odk6avyshdha"
+path="res://.godot/imported/Tiles-Grass.png-5e8be9cf80f1f7fb69f73bab0e56fea5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Jupiner/CaveGuy-WallJump.png"
-dest_files=["res://.godot/imported/CaveGuy-WallJump.png-e609d62e4cc2ae2c47612aa79a7ce069.ctex"]
+source_file="res://Jupiner/Tiles-Grass.png"
+dest_files=["res://.godot/imported/Tiles-Grass.png-5e8be9cf80f1f7fb69f73bab0e56fea5.ctex"]
 
 [params]
 

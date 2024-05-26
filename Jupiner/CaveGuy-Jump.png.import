@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drwiwsngxgixu"
-path="res://.godot/imported/CaveGuy-IdleWalk.png-49e4fe1c99d87b852994fef52dee6cb0.ctex"
+uid="uid://d352s8usbcs38"
+path="res://.godot/imported/CaveGuy-Jump.png-5bbf33049719a582b15a95a2b0549b84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Jupiner/CaveGuy-IdleWalk.png"
-dest_files=["res://.godot/imported/CaveGuy-IdleWalk.png-49e4fe1c99d87b852994fef52dee6cb0.ctex"]
+source_file="res://Jupiner/CaveGuy-Jump.png"
+dest_files=["res://.godot/imported/CaveGuy-Jump.png-5bbf33049719a582b15a95a2b0549b84.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d352s8usbcs38"
-path="res://.godot/imported/CaveGuy-Jump.png-53ab1aeff44d53a106655eb88ba6acf0.ctex"
+uid="uid://dao8u5cryoc1g"
+path="res://.godot/imported/CaveGuy-WallJump.png-9f45fc3bee1661e6ea819fd5683e7dde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Jupiner/CaveGuy-Jump.png"
-dest_files=["res://.godot/imported/CaveGuy-Jump.png-53ab1aeff44d53a106655eb88ba6acf0.ctex"]
+source_file="res://Jupiner/CaveGuy-WallJump.png"
+dest_files=["res://.godot/imported/CaveGuy-WallJump.png-9f45fc3bee1661e6ea819fd5683e7dde.ctex"]
 
 [params]
 

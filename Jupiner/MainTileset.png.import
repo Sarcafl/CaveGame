@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2n7qfjnjp63p"
-path="res://.godot/imported/CaveGuy-Sheet01.png-61e7a9bf09af9657a15c46c65a3db857.ctex"
+uid="uid://c5supv0udd8lc"
+path="res://.godot/imported/MainTileset.png-5c71216226f3d5e609f972b793d982cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Jupiner/CaveGuy-Sheet01.png"
-dest_files=["res://.godot/imported/CaveGuy-Sheet01.png-61e7a9bf09af9657a15c46c65a3db857.ctex"]
+source_file="res://Jupiner/MainTileset.png"
+dest_files=["res://.godot/imported/MainTileset.png-5c71216226f3d5e609f972b793d982cc.ctex"]
 
 [params]
 

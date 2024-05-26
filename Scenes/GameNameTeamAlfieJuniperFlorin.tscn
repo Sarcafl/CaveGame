@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dekpr1jetst0i"]
 
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_dtvtn"]
-[ext_resource type="Texture2D" uid="uid://uv3qcwg6vhrn" path="res://Assets/Jupiner/Tileset-01.png" id="3_0mfud"]
+[ext_resource type="Texture2D" uid="uid://uv3qcwg6vhrn" path="res://Jupiner/Tileset-01.png" id="3_0mfud"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="3_6p0vl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cybpj"]
