@@ -3,7 +3,7 @@ extends State
 class_name GroundState
 
 @export var wallJump_push = 800
-@export var jump_velocity: float = -200
+@export var jump_velocity: float = -300
 @export var air_state: State
 @export var landing_state: State
 @export var jump_animation: String = "jump"
@@ -24,12 +24,13 @@ func state_process(delta):
 		wall_slide(delta)
 	elif character.is_on_floor():
 		is_wall_sliding = false
+		character.reset_wall_jump_count()  # Reset wall jump count when on the ground
 		if abs(character.velocity.x) > 0.1:
 			playback.travel(walk_animation)
 		else:
 			playback.travel(idle_animation)
 
-func state_input(event: InputEvent):
+func state_input(_event: InputEvent):
 	if is_wall_sliding and Input.is_action_pressed("jump"):
 		perform_wall_jump()
 	elif character.is_on_wall() and (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
@@ -39,17 +40,19 @@ func state_input(event: InputEvent):
 		jump()
 
 func perform_wall_jump():
-	character.velocity.y = jump_velocity
-	if character.is_on_wall():
-		if Input.is_action_pressed("right"):
-			character.velocity.x = -wallJump_push
-		elif Input.is_action_pressed("left"):
-			character.velocity.x = wallJump_push
-		else:
-			character.velocity.x = -sign(character.velocity.x) * wallJump_push
-		playback.travel(jump_animation)
-	is_wall_sliding = false
-	character.play_jump_sound()  # Play jump sound
+	if character.wall_jump_count < character.max_wall_jumps:  # Check if wall jump limit is reached
+		character.velocity.y = jump_velocity
+		if character.is_on_wall():
+			if Input.is_action_pressed("right"):
+				character.velocity.x = -wallJump_push
+			elif Input.is_action_pressed("left"):
+				character.velocity.x = wallJump_push
+			else:
+				character.velocity.x = -sign(character.velocity.x) * wallJump_push
+			playback.travel(jump_animation)
+		is_wall_sliding = false
+		character.wall_jump_count += 1  # Increment wall jump count
+		character.play_jump_sound()  # Play jump sound
 
 func jump():
 	character.velocity.y = jump_velocity

@@ -54,13 +54,15 @@ func double_jump():
 	character.play_jump_sound()  # Play jump sound
 
 func perform_wall_jump():
-	character.velocity.y = jump_velocity
-	if Input.is_action_pressed("right"):
-		character.velocity.x = -wallJump_push
-	elif Input.is_action_pressed("left"):
-		character.velocity.x = wallJump_push
-	else:
-		character.velocity.x = -sign(character.velocity.x) * wallJump_push
-	playback.travel(jump_animation)
-	is_wall_sliding = false
-	character.play_jump_sound()  # Play jump sound
+	if character.wall_jump_count < character.max_wall_jumps:  # Check if wall jump limit is reached
+		character.velocity.y = jump_velocity
+		if Input.is_action_pressed("right"):
+			character.velocity.x = -wallJump_push
+		elif Input.is_action_pressed("left"):
+			character.velocity.x = wallJump_push
+		else:
+			character.velocity.x = -sign(character.velocity.x) * wallJump_push
+		playback.travel(jump_animation)
+		is_wall_sliding = false
+		character.wall_jump_count += 1  # Increment wall jump count
+		character.play_jump_sound()  # Play jump sound

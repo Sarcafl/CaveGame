@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="2_aku4r"]
 [ext_resource type="Texture2D" uid="uid://b0h6g7mvk4t6v" path="res://Jupiner/Menu_Artwork.jpg" id="2_wmpuu"]
 
-[node name="Menu" type="Control"]
+[node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,6 +55,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aku4r")
 text = "QUIT"
 
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_aku4r")
+text = "Credits"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

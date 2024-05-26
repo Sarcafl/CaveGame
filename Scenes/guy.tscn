@@ -77,8 +77,8 @@
 [ext_resource type="AudioStream" uid="uid://iyyngsgctg0d" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_04.wav" id="70_72lj3"]
 [ext_resource type="AudioStream" uid="uid://b84w0ua6vemcs" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_05.wav" id="71_s58ul"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwxqy"]
-size = Vector2(13, 21)
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ns7f"]
+radius = 9.51315
 
 [sub_resource type="Animation" id="Animation_gbbu6"]
 length = 0.001
@@ -880,8 +880,8 @@ collision_mask = 5
 script = ExtResource("1_otn7k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 4.5)
-shape = SubResource("RectangleShape2D_mwxqy")
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_2ns7f")
 debug_color = Color(0.805208, 0.303287, 0.722757, 0.42)
 
 [node name="left" type="RayCast2D" parent="."]
