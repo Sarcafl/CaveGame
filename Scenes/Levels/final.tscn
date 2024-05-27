@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d021cntds0dj5"]
+[gd_scene load_steps=3 format=3 uid="uid://d021cntds0dj5"]
 
 [ext_resource type="PackedScene" uid="uid://cj8q8huctf6ik" path="res://Scenes/Levels/level_three.tscn" id="1_6bhiy"]
+[ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="2_t0blw"]
 
 [node name="FINAL" type="Node2D"]
 
 [node name="level_layout" parent="." instance=ExtResource("1_6bhiy")]
+
+[node name="Guy" parent="." instance=ExtResource("2_t0blw")]
+position = Vector2(-213, -61)

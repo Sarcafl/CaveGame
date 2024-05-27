@@ -980,10 +980,6 @@ bus = &"SFX"
 
 [node name="audio_footstep_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_qlk5h")
-<<<<<<< Updated upstream
-=======
-volume_db = -3.5
->>>>>>> Stashed changes
 bus = &"SFX"
 
 [node name="FootstepTimer" type="Timer" parent="."]
@@ -1002,10 +998,6 @@ bus = &"SFX"
 
 [node name="audio_jump_end_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hkccc")
-<<<<<<< Updated upstream
-=======
-volume_db = -3.0
->>>>>>> Stashed changes
 bus = &"SFX"
 
 [node name="Camera2D" type="Camera2D" parent="."]
