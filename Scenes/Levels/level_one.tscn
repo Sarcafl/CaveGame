@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://duiw6db2u8gyx"]
+[gd_scene load_steps=16 format=3 uid="uid://duiw6db2u8gyx"]
 
 [ext_resource type="Texture2D" uid="uid://c5supv0udd8lc" path="res://Jupiner/MainTileset.png" id="1_wd8hq"]
 [ext_resource type="Texture2D" uid="uid://cu06u3jy72v8g" path="res://Jupiner/Tilesets/WaterTiles.png" id="2_ifwvo"]
@@ -6,10 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d3xx3itxgjcde" path="res://Jupiner/Tilesets/Decorative-Waterfall.png" id="4_cb2p0"]
 [ext_resource type="Texture2D" uid="uid://cpxy7qvxee80e" path="res://Jupiner/Tilesets/DecorativeTiles.png" id="5_jy15w"]
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="6_lgunu"]
-[ext_resource type="Texture2D" uid="uid://bks6wjxag0ce6" path="res://Jupiner/Warnings.png" id="6_n4isi"]
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="7_x1r3u"]
-[ext_resource type="AudioStream" uid="uid://dedgngfpvempw" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_decorative_waterfall.wav" id="8_6koau"]
-[ext_resource type="AudioStream" uid="uid://bi27q6aonojca" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_poisonwater_loop.ogg" id="9_6ocak"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qp3j"]
 texture = ExtResource("1_wd8hq")
@@ -995,14 +992,8 @@ texture = ExtResource("5_jy15w")
 5:2/0 = 0
 6:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_35mmp"]
-texture = ExtResource("6_n4isi")
-0:0/0 = 0
-1:0/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_fnidx"]
 sources/0 = SubResource("TileSetAtlasSource_qgr0t")
-sources/1 = SubResource("TileSetAtlasSource_35mmp")
 
 [node name="level_layout" type="TileMap" groups=["floor"]]
 position = Vector2(-57, -81)
@@ -1020,7 +1011,7 @@ layer_0/tile_data = PackedInt32Array(-1376269, 0, 3, -1310733, 0, 3, -1245197, 0
 [node name="Decorations" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_fnidx")
 format = 2
-layer_0/tile_data = PackedInt32Array(65531, 0, 2, 65532, 65536, 2, -524279, 0, 2, -524278, 65536, 2, 1179703, 0, 2, 1179704, 65536, 2, 1441897, 0, 2, 1441898, 65536, 2, 393309, 0, 2, 393310, 65536, 2, 655439, 0, 2, 655440, 65536, 2, 589893, 65536, 1, 655447, 65536, 1, -524207, 65536, 1, -655254, 65536, 1, -1703911, 65536, 1, -1834972, 65536, 1, 131070, 196608, 0, 27, 196608, 0, -458714, 196608, 0, -458709, 196608, 0, 1179706, 196608, 0, 1769546, 196608, 0, 786537, 196608, 0, 131180, 196608, 0, 131186, 196608, 0, -917403, 196608, 0, -655275, 196608, 0, 65539, 327680, 0, 196617, 327680, 0, -655354, 327680, 0, -851921, 327680, 0, -1834970, 327680, 0, -1703908, 327680, 0, -1376170, 327680, 0, -720810, 327680, 0, 655443, 393216, 0, 589898, 327680, 2, -262070, 327680, 2, 1441864, 327680, 2, 917558, 327680, 2, 852016, 393216, 2, -262122, 65536, 0, -262126, 65536, 0, -655341, 65536, 0, -589793, 65536, 0, -1703910, 65536, 0, -1507280, 65536, 0, -1507265, 65536, 0, -1245075, 65536, 0, -1245069, 65536, 0, 131183, 65536, 0, 262243, 65536, 0, -327586, 262144, 1, -720805, 262144, 1, -393114, 262144, 1, 196695, 262144, 1, 24, 262144, 1, -131053, 262144, 1, 131071, 0, 0, -262151, 0, 0, 393280, 0, 0, 655442, 0, 0, 196612, 65537, 268435456, 720942, 65537, 268435456, -1507300, 65537, 268435456)
+layer_0/tile_data = PackedInt32Array(65531, 0, 2, 65532, 65536, 2, -524279, 0, 2, -524278, 65536, 2, 1179703, 0, 2, 1179704, 65536, 2, 1441897, 0, 2, 1441898, 65536, 2, 393309, 0, 2, 393310, 65536, 2, 655439, 0, 2, 655440, 65536, 2, 589893, 65536, 1, 655447, 65536, 1, -524207, 65536, 1, -655254, 65536, 1, -1703911, 65536, 1, -1834972, 65536, 1, 131070, 196608, 0, 27, 196608, 0, -458714, 196608, 0, -458709, 196608, 0, 1179706, 196608, 0, 1769546, 196608, 0, 786537, 196608, 0, 131180, 196608, 0, 131186, 196608, 0, -917403, 196608, 0, -655275, 196608, 0, 65539, 327680, 0, 196617, 327680, 0, -655354, 327680, 0, -851921, 327680, 0, -1834970, 327680, 0, -1703908, 327680, 0, -1376170, 327680, 0, -720810, 327680, 0, 655443, 393216, 0, 589898, 327680, 2, -262070, 327680, 2, 1441864, 327680, 2, 917558, 327680, 2, 852016, 393216, 2, -262122, 65536, 0, -262126, 65536, 0, -655341, 65536, 0, -589793, 65536, 0, -1703910, 65536, 0, -1507280, 65536, 0, -1507265, 65536, 0, -1245075, 65536, 0, -1245069, 65536, 0, 131183, 65536, 0, 262243, 65536, 0, -327586, 262144, 1, -720805, 262144, 1, -393114, 262144, 1, 196695, 262144, 1, 24, 262144, 1, -131053, 262144, 1, 131071, 0, 0, -262151, 0, 0, 393280, 0, 0, 655442, 0, 0)
 
 [node name="CrumblyPlatform" parent="." instance=ExtResource("6_lgunu")]
 position = Vector2(993, -255)
@@ -1063,29 +1054,3 @@ offset_bottom = -584.0
 theme_override_fonts/font = ExtResource("7_x1r3u")
 text = "if you got here
 don't forget to rate ;)"
-
-[node name="environment_waterfall" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_6koau")
-volume_db = -24.352
-autoplay = true
-max_distance = 500.0
-panning_strength = 1.5
-
-[node name="environment_waterfall2" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1529, 63)
-stream = ExtResource("8_6koau")
-volume_db = -22.736
-autoplay = true
-max_distance = 500.0
-panning_strength = 1.5
-
-[node name="environment_water_static" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1533, 229)
-stream = ExtResource("9_6ocak")
-autoplay = true
-max_distance = 1000.0
-
-[node name="Decoration-Warning" type="Sprite2D" parent="."]
-position = Vector2(686, -116)
-texture = ExtResource("6_n4isi")
-hframes = 2

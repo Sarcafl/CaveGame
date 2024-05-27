@@ -85,8 +85,7 @@ stream_1/weight = 1.0
 stream_2/stream = ExtResource("5_af271")
 stream_2/weight = 1.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b3nqk"]
-random_pitch = 1.1
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v5q4y"]
 streams_count = 4
 stream_0/stream = ExtResource("3_d8fbi")
 stream_0/weight = 1.0
@@ -118,13 +117,10 @@ debug_color = Color(0.785241, 0.344522, 0.676144, 0.42)
 
 [node name="audio_stepped_on" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_ivwgm")
-volume_db = -2.0
 bus = &"SFX"
 
 [node name="audio_falling" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_b3nqk")
-volume_db = -8.0
-pitch_scale = 0.9
+stream = SubResource("AudioStreamRandomizer_v5q4y")
 bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

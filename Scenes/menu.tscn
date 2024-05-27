@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm2wj0iddt2ll"]
+[gd_scene load_steps=4 format=3 uid="uid://cm2wj0iddt2ll"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_7l0rm"]
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="2_aku4r"]
 [ext_resource type="Texture2D" uid="uid://b0h6g7mvk4t6v" path="res://Jupiner/Menu_Artwork.jpg" id="2_wmpuu"]
-[ext_resource type="AudioStream" uid="uid://cg4m53tyuw2rc" path="res://Assets/Alfie Music and sfx/sfx/main_menu/menu_startgame.wav" id="4_hor16"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -60,14 +59,6 @@ text = "QUIT"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aku4r")
 text = "Credits"
-
-[node name="audio_click" type="AudioStreamPlayer" parent="."]
-
-[node name="audio_back" type="AudioStreamPlayer" parent="."]
-
-[node name="audio_play" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_hor16")
-volume_db = -6.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
