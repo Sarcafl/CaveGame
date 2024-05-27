@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cnpra0murgydy"]
 
 [ext_resource type="Script" path="res://Scripts/Rock.gd" id="1_5j50k"]
-[ext_resource type="Texture2D" uid="uid://u7kajs8dlw3g" path="res://Jupiner/envinronment/FallingSpike.png" id="2_0ncon"]
+[ext_resource type="Texture2D" uid="uid://dofvnqogeo65b" path="res://Jupiner/CrystalSpike.png" id="2_3e811"]
 [ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="3_3gwp6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2r82s"]
@@ -33,7 +33,7 @@ shape = SubResource("CircleShape2D_ohehq")
 debug_color = Color(0.461973, 0.470521, 0.93348, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_0ncon")
+texture = ExtResource("2_3e811")
 
 [node name="RockCollider" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
