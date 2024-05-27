@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dekpr1jetst0i"]
+[gd_scene load_steps=11 format=3 uid="uid://dekpr1jetst0i"]
 
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_3oal4"]
 [ext_resource type="PackedScene" uid="uid://duiw6db2u8gyx" path="res://Scenes/Levels/level_one.tscn" id="4_e0and"]
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="4_fodcv"]
+[ext_resource type="PackedScene" uid="uid://djpq4dtkdx3ky" path="res://Jupiner/Secret/extra_secret.tscn" id="8_echoh"]
 [ext_resource type="Script" path="res://Scenes/Node2.gd" id="8_vu7d1"]
 [ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="9_bv4uo"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="10_ggn47"]
@@ -258,9 +259,6 @@ position = Vector2(1629, 149)
 [node name="Rock16" parent="Stalactites" instance=ExtResource("10_ggn47")]
 position = Vector2(1621, -76)
 
-[node name="Rock17" parent="Stalactites" instance=ExtResource("10_ggn47")]
-position = Vector2(1455, -301)
-
 [node name="Rock18" parent="Stalactites" instance=ExtResource("10_ggn47")]
 position = Vector2(1566, -334)
 
@@ -291,6 +289,9 @@ shape = SubResource("RectangleShape2D_8qeej")
 
 [node name="Node2" type="Node" parent="."]
 script = ExtResource("8_vu7d1")
+
+[node name="ExtraSecret" parent="." instance=ExtResource("8_echoh")]
+position = Vector2(-293, -622)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
