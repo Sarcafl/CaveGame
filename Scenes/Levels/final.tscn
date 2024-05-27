@@ -1,11 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://d021cntds0dj5"]
+[gd_scene load_steps=6 format=3 uid="uid://d021cntds0dj5"]
 
 [ext_resource type="PackedScene" uid="uid://cj8q8huctf6ik" path="res://Scenes/Levels/level_three.tscn" id="1_6bhiy"]
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="2_t0blw"]
+[ext_resource type="Script" path="res://Scenes/Levels/LevelCompletionTrigger.gd" id="3_0ewl2"]
+[ext_resource type="PackedScene" uid="uid://b15bn2fmpklc7" path="res://timer_stop.tscn" id="4_c2hxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1yb1"]
+size = Vector2(65, 20)
 
 [node name="FINAL" type="Node2D"]
 
 [node name="level_layout" parent="." instance=ExtResource("1_6bhiy")]
 
 [node name="Guy" parent="." instance=ExtResource("2_t0blw")]
-position = Vector2(-183, -59)
+position = Vector2(-213, -61)
+
+[node name="LevelCompletionTrigger" type="Area2D" parent="."]
+position = Vector2(1504, -1144)
+script = ExtResource("3_0ewl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelCompletionTrigger"]
+position = Vector2(22.5, 0)
+shape = SubResource("RectangleShape2D_m1yb1")
+
+[node name="TimerSTOP" parent="." instance=ExtResource("4_c2hxg")]

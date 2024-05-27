@@ -1,22 +1,15 @@
 extends CanvasLayer
 
-var time = GlobalTimer.speedrun_time
-
 func _physics_process(delta):
- time = float(time) + delta
- 
- update_ui()
- 
-func update_ui():
- 
-#Format time with two decimal places
- var formatted_time = str(time)
- var decimal_index = formatted_time.find(".")
- 
- if decimal_index > 0:
-  formatted_time = formatted_time.left(decimal_index + 3)  # Take only two decimal places
- 
- GlobalTimer.speedrun_time = formatted_time
+	var time = SpeedrunTimer.speedrun_time
+	update_ui(time)
 
-  
- $Label.text = formatted_time
+func update_ui(time):
+	# Format time with two decimal places
+	var formatted_time = str(time)
+	var decimal_index = formatted_time.find(".")
+
+	if decimal_index > 0:
+		formatted_time = formatted_time.left(decimal_index + 3)  # Take only two decimal places
+
+	$Label.text = formatted_time

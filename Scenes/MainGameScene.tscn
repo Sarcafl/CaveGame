@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_3oal4"]
 [ext_resource type="PackedScene" uid="uid://duiw6db2u8gyx" path="res://Scenes/Levels/level_one.tscn" id="4_e0and"]
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="4_fodcv"]
-[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="8_w3bvx"]
+[ext_resource type="Script" path="res://Scenes/Node2.gd" id="8_vu7d1"]
 [ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="9_bv4uo"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="10_ggn47"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelCompletionTrigger.gd" id="11_tr5fg"]
@@ -26,18 +26,6 @@ position = Vector2(105, -76)
 [node name="Node" type="Node" parent="."]
 
 [node name="level_layout" parent="." instance=ExtResource("4_e0and")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("8_w3bvx")
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
 
 [node name="KillZones" type="Node" parent="."]
 
@@ -234,9 +222,6 @@ position = Vector2(89, -172)
 [node name="Rock3" parent="Stalactites" instance=ExtResource("10_ggn47")]
 position = Vector2(255, -93)
 
-[node name="Rock4" parent="Stalactites" instance=ExtResource("10_ggn47")]
-position = Vector2(303, -77)
-
 [node name="Rock5" parent="Stalactites" instance=ExtResource("10_ggn47")]
 position = Vector2(335, -61)
 
@@ -289,6 +274,7 @@ position = Vector2(1120, -411)
 position = Vector2(1787, -391)
 script = ExtResource("11_tr5fg")
 scenePath = "res://dirt_caveUP.tscn"
+level_name = "Cave"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_8qeej")
@@ -297,10 +283,14 @@ shape = SubResource("RectangleShape2D_8qeej")
 position = Vector2(1789, -55)
 script = ExtResource("11_tr5fg")
 scenePath = "res://dirt_cave.tscn"
+level_name = "Cave"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_8qeej")
+
+[node name="Node2" type="Node" parent="."]
+script = ExtResource("8_vu7d1")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

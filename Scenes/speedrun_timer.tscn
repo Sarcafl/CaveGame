@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu00chmf5741j"]
+
+[ext_resource type="Script" path="res://SpeedrunTimer.gd" id="1_ycqai"]
+
+[node name="SpeedrunTimer" type="Timer"]
+script = ExtResource("1_ycqai")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

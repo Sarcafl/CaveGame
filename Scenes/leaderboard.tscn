@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://liw4beo0pmhi"]
+
+[ext_resource type="Script" path="res://Scripts/Leaderboard.gd" id="1_hfdd0"]
+[ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="2_xluda"]
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfdd0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -14.0
+offset_right = 88.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xluda")
+text = "BACK"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label10" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

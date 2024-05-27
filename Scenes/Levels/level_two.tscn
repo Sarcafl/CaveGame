@@ -8,8 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="6_f4q73"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="7_c6un1"]
 [ext_resource type="AudioStream" uid="uid://bi27q6aonojca" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_poisonwater_loop.ogg" id="8_mxuee"]
-[ext_resource type="Texture2D" path="res://Jupiner/Warnings.png" id="9_xbv7o"]
-[ext_resource type="AudioStream" uid="uid://b2qvmr3nt270v" path="res://Assets/Alfie Music and sfx/music/mystical_loop.wav" id="10_u3bg8"]
+[ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="9_y40ro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qp3j"]
 texture = ExtResource("1_4r4oj")
@@ -998,6 +997,9 @@ texture = ExtResource("5_g5vjr")
 [sub_resource type="TileSet" id="TileSet_fnidx"]
 sources/0 = SubResource("TileSetAtlasSource_qgr0t")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71elr"]
+size = Vector2(12, 4)
+
 [node name="level_layout" type="TileMap" groups=["floor"]]
 position = Vector2(-56, -80)
 tile_set = SubResource("TileSet_csh5g")
@@ -1051,7 +1053,10 @@ position = Vector2(-312, 128)
 position = Vector2(-360, 128)
 
 [node name="CrumblyPlatform-11" parent="CrumblyPlatforms" instance=ExtResource("6_f4q73")]
-position = Vector2(-8, -112)
+position = Vector2(-55, -114)
+
+[node name="CrumblyPlatform-17" parent="CrumblyPlatforms" instance=ExtResource("6_f4q73")]
+position = Vector2(9, -114)
 
 [node name="CrumblyPlatform-13" parent="CrumblyPlatforms" instance=ExtResource("6_f4q73")]
 position = Vector2(-208, 160)
@@ -1069,12 +1074,6 @@ position = Vector2(-520, -352)
 
 [node name="Rock" parent="Rocks" instance=ExtResource("7_c6un1")]
 position = Vector2(-96, -160)
-
-[node name="Rock2" parent="Rocks" instance=ExtResource("7_c6un1")]
-position = Vector2(-8, -240)
-
-[node name="Rock3" parent="Rocks" instance=ExtResource("7_c6un1")]
-position = Vector2(48, -240)
 
 [node name="Rock4" parent="Rocks" instance=ExtResource("7_c6un1")]
 position = Vector2(-368, -96)
@@ -1123,13 +1122,557 @@ stream = ExtResource("8_mxuee")
 autoplay = true
 bus = &"SFX"
 
-[node name="WarningSign" type="Sprite2D" parent="."]
-position = Vector2(-490, -293)
-texture = ExtResource("9_xbv7o")
-hframes = 2
+[node name="killzones" type="Node" parent="."]
 
-[node name="warningSound" type="AudioStreamPlayer2D" parent="WarningSign"]
-stream = ExtResource("10_u3bg8")
-autoplay = true
-max_distance = 500.0
-panning_strength = 1.5
+[node name="KillZone" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-69, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone2" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-55, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone2"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone3" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-41, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone3"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone4" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-27, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone4"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone5" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-14, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone5"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone6" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-1, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone6"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone7" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(17, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone7"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone8" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(30, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone8"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone9" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(43, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone9"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone10" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(56, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone10"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone11" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(69, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone11"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone12" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(83, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone12"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone13" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(96, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone13"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone14" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(109, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone14"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone15" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(35, 91)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone15"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone17" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(253, 187)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone17"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone18" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(264, 92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone18"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone19" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(348, 91)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone19"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone20" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(282, 139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone20"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone21" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(295, 139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone21"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone22" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(308, 139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone22"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone23" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(321, 139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone23"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone24" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(332, 363)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone24"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone25" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-130, -421)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone25"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone26" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-72, -421)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone26"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone27" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-343, -295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone27"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone28" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-330, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone28"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone29" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-317, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone29"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone30" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-304, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone30"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone31" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-290, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone31"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone32" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-231, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone32"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone33" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-218, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone33"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone34" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-204, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone34"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone35" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-191, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone35"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone36" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-178, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone36"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone37" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-103, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone37"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone38" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-88, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone38"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone39" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-71, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone39"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone40" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-36, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone40"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone41" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-19, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone41"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone42" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-4, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone42"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone43" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(11, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone43"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone44" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(89, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone44"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone45" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(103, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone45"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone46" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(117, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone46"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone47" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(131, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone47"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone48" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-375, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone48"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone49" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-361, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone49"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone50" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-346, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone50"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone51" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-331, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone51"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone52" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-316, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone52"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone53" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-298, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone53"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone54" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-280, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone54"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone55" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-260, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone55"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone56" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-244, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone56"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone57" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-230, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone57"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone58" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-215, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone58"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone59" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-201, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone59"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone60" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(-186, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone60"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone61" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(90, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone61"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone62" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(105, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone62"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone63" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(120, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone63"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone64" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(134, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone64"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone65" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(149, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone65"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone66" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(163, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone66"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone67" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(177, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone67"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone68" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(192, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone68"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone69" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(207, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone69"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone70" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(223, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone70"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone71" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(276, 409)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone71"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone72" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(291, 409)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone72"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone73" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(305, 409)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone73"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone74" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(319, 409)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone74"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone75" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(364, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone75"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone76" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(297, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone76"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone77" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(315, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone77"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone78" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(253, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone78"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone79" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(268, -69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone79"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")
+
+[node name="KillZone16" parent="killzones" instance=ExtResource("9_y40ro")]
+position = Vector2(52, 91)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/KillZone16"]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_71elr")

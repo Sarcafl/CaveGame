@@ -8,4 +8,4 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == player_name:
 		print("Guy entered area")
-		GlobalTimer.stop_timer()
+		SpeedrunTimer.stop_timer()

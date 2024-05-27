@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://duiw6db2u8gyx"]
+[gd_scene load_steps=18 format=3 uid="uid://duiw6db2u8gyx"]
 
 [ext_resource type="Texture2D" uid="uid://c5supv0udd8lc" path="res://Jupiner/MainTileset.png" id="1_wd8hq"]
 [ext_resource type="Texture2D" uid="uid://cu06u3jy72v8g" path="res://Jupiner/Tilesets/WaterTiles.png" id="2_ifwvo"]
@@ -9,8 +9,6 @@
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="7_x1r3u"]
 [ext_resource type="AudioStream" uid="uid://dedgngfpvempw" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_decorative_waterfall.wav" id="8_6koau"]
 [ext_resource type="AudioStream" uid="uid://bi27q6aonojca" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_poisonwater_loop.ogg" id="9_6ocak"]
-[ext_resource type="Texture2D" path="res://Jupiner/Warnings.png" id="10_487jt"]
-[ext_resource type="AudioStream" uid="uid://b2qvmr3nt270v" path="res://Assets/Alfie Music and sfx/music/mystical_loop.wav" id="11_tehp5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qp3j"]
 texture = ExtResource("1_wd8hq")
@@ -1079,14 +1077,3 @@ position = Vector2(1533, 229)
 stream = ExtResource("9_6ocak")
 autoplay = true
 max_distance = 1000.0
-
-[node name="WarningSign" type="Sprite2D" parent="."]
-position = Vector2(683, -115)
-texture = ExtResource("10_487jt")
-hframes = 2
-
-[node name="warningSound" type="AudioStreamPlayer2D" parent="WarningSign"]
-stream = ExtResource("11_tehp5")
-autoplay = true
-max_distance = 500.0
-panning_strength = 1.5

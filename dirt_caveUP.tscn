@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2ls4o1t48wo2"]
+[gd_scene load_steps=5 format=3 uid="uid://d2ls4o1t48wo2"]
 
 [ext_resource type="PackedScene" uid="uid://dahfaomhhb5wd" path="res://Scenes/Levels/level_two.tscn" id="1_livyr"]
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="2_d6g6p"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelCompletionTrigger.gd" id="3_gvbvv"]
-[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="4_0yaxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoyde"]
+size = Vector2(20, 38)
 
 [node name="DirtCave" type="Node2D"]
 
@@ -17,21 +17,11 @@ position = Vector2(-671, -382)
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(689, 140)
 script = ExtResource("3_gvbvv")
-scenePath = "res://Scenes/MainGameScene.tscn"
+scenePath = "res://Scenes/Levels/final.tscn"
+level_name = "Crystal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_yoyde")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("4_0yaxn")
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
