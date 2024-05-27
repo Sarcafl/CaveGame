@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://2417am1qo52m"]
+
+[ext_resource type="AudioStream" uid="uid://djexgls525r4k" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_01.wav" id="1_q27hv"]
+[ext_resource type="AudioStream" uid="uid://cdip30jloinuq" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_02.wav" id="2_jwk8q"]
+[ext_resource type="AudioStream" uid="uid://vyp278ma2do7" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_03.wav" id="3_04sct"]
+[ext_resource type="AudioStream" uid="uid://b32sase71ntmg" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_04.wav" id="4_d8osr"]
+[ext_resource type="AudioStream" uid="uid://cngel0cbqyfmo" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_05.wav" id="5_meix0"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_86ua4"]
+streams_count = 5
+stream_0/stream = ExtResource("1_q27hv")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_jwk8q")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_04sct")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_d8osr")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_meix0")
+stream_4/weight = 1.0
+
+[node name="DeathSounds" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamRandomizer_86ua4")

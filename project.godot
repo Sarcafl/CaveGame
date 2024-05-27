@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Ambience="*res://Scenes/ambience.tscn"
 SpeedrunTimer="*res://Scenes/speedrun_timer.tscn"
 InputGlobalReset="*res://Scenes/InputGlobalReset.tscn"
+DeathSounds="*res://Scenes/death_sounds.tscn"
+SafeSceneLoader="*res://Scripts/SafeSceneLoader.gd"
 
 [display]
 
