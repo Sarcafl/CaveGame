@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bcpruk8mfrv41"
+path="res://.godot/imported/environment_stalagtite_fall_03.wav-d023d218620e9c3c4bfb9d0bc04879dd.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/environment_stalagtite/environment_stalagtite_fall_03.wav"
+dest_files=["res://.godot/imported/environment_stalagtite_fall_03.wav-d023d218620e9c3c4bfb9d0bc04879dd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

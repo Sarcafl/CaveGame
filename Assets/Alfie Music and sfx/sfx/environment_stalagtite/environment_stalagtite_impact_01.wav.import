@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qkfhj4mr067j"
+path="res://.godot/imported/environment_stalagtite_impact_01.wav-1421cb38526da8f570502a91fa14ce4a.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/environment_stalagtite/environment_stalagtite_impact_01.wav"
+dest_files=["res://.godot/imported/environment_stalagtite_impact_01.wav-1421cb38526da8f570502a91fa14ce4a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

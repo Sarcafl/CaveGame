@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://j434jr0l820w"
+path="res://.godot/imported/menu_back_02.wav-e8786a6dda1b4ce7d8d8758b6a8f568b.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/main_menu/menu_back_02.wav"
+dest_files=["res://.godot/imported/menu_back_02.wav-e8786a6dda1b4ce7d8d8758b6a8f568b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

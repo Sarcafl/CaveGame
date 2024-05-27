@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bi27q6aonojca"
+path="res://.godot/imported/environment_poisonwater_loop.ogg-c7f0728d44b3112a98376acabd986e55.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_poisonwater_loop.ogg"
+dest_files=["res://.godot/imported/environment_poisonwater_loop.ogg-c7f0728d44b3112a98376acabd986e55.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

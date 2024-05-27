@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://d3ve7kcm0tm6g"]
+[gd_scene load_steps=125 format=3 uid="uid://d3ve7kcm0tm6g"]
 
 [ext_resource type="Script" path="res://Scripts/Character/CharacterBody2D.gd" id="1_otn7k"]
 [ext_resource type="Texture2D" uid="uid://2n7qfjnjp63p" path="res://Jupiner/Player/CaveGuy-Sheet01.png" id="2_8cab8"]
@@ -57,7 +57,6 @@
 [ext_resource type="AudioStream" uid="uid://bfm7mmsoalj1o" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/dirt/player_jumpland_dirt_02.wav" id="63_6rewt"]
 [ext_resource type="AudioStream" uid="uid://cdejgdti6lepy" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/dirt/player_jumpland_dirt_03.wav" id="64_edjn4"]
 [ext_resource type="AudioStream" uid="uid://ce6kqe1nqcuus" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_14.wav" id="64_yar01"]
-[ext_resource type="AudioStream" uid="uid://dwmynlo8xkuy0" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/dirt/player_jumpland_dirt_04.wav" id="65_20jnv"]
 [ext_resource type="AudioStream" uid="uid://yelea4wakyxt" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_15.wav" id="65_b2361"]
 [ext_resource type="AudioStream" uid="uid://cmd87x67n8oys" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_16.wav" id="66_aa5ay"]
 [ext_resource type="AudioStream" uid="uid://pqxgctbf43s6" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/rock/player_jumpland_rock_01.wav" id="66_l41vj"]
@@ -755,6 +754,8 @@ transitions = ["move", "jump", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(-144, -109)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6885x"]
+random_pitch = 1.5
+random_volume_offset_db = 3.0
 streams_count = 6
 stream_0/stream = ExtResource("11_qapw3")
 stream_0/weight = 1.0
@@ -869,15 +870,14 @@ stream_15/stream = ExtResource("66_aa5ay")
 stream_15/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3ocmu"]
-streams_count = 4
+random_volume_offset_db = 2.0
+streams_count = 3
 stream_0/stream = ExtResource("62_2tv6b")
 stream_0/weight = 1.0
 stream_1/stream = ExtResource("63_6rewt")
 stream_1/weight = 1.0
 stream_2/stream = ExtResource("64_edjn4")
 stream_2/weight = 1.0
-stream_3/stream = ExtResource("65_20jnv")
-stream_3/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h71fk"]
 streams_count = 2
@@ -951,6 +951,7 @@ state_machine = NodePath("../CharacterStateMachine")
 
 [node name="audio_jump_sound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_6885x")
+volume_db = -3.0
 bus = &"SFX"
 
 [node name="audio_footstep_rock" type="AudioStreamPlayer2D" parent="."]
@@ -959,10 +960,12 @@ bus = &"SFX"
 
 [node name="audio_footstep_dirt" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_1wlop")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="audio_footstep_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_qlk5h")
+volume_db = -2.5
 bus = &"SFX"
 
 [node name="FootstepTimer" type="Timer" parent="."]
@@ -973,6 +976,7 @@ position = Vector2(0, 15)
 
 [node name="audio_jump_end_dirt" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_3ocmu")
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="audio_jump_end_rock" type="AudioStreamPlayer2D" parent="."]
@@ -981,6 +985,7 @@ bus = &"SFX"
 
 [node name="audio_jump_end_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hkccc")
+volume_db = -2.0
 bus = &"SFX"
 
 [node name="Camera2D" type="Camera2D" parent="."]
