@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_3oal4"]
 [ext_resource type="PackedScene" uid="uid://duiw6db2u8gyx" path="res://Scenes/Levels/level_one.tscn" id="4_e0and"]
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="4_fodcv"]
-[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="8_w3bvx"]
+[ext_resource type="PackedScene" uid="uid://b15bn2fmpklc7" path="res://timer_stop.tscn" id="7_h8dou"]
 [ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="9_bv4uo"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="10_ggn47"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelCompletionTrigger.gd" id="11_tr5fg"]
@@ -26,18 +26,6 @@ position = Vector2(105, -76)
 [node name="Node" type="Node" parent="."]
 
 [node name="level_layout" parent="." instance=ExtResource("4_e0and")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("8_w3bvx")
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
 
 [node name="KillZones" type="Node" parent="."]
 
@@ -301,6 +289,9 @@ scenePath = "res://dirt_cave.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_8qeej")
+
+[node name="TimerSTOP" parent="." instance=ExtResource("7_h8dou")]
+position = Vector2(-127, -88)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

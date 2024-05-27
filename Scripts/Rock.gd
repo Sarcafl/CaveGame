@@ -5,8 +5,6 @@ extends RigidBody2D
 @onready var detection_area = $DetectionArea
 @onready var jump_area = $JumpArea
 @onready var ground_timer = $GroundTimer  # Ensure this Timer node is added to the scene
-@onready var audio_fall = $audio_fall
-@onready var audio_impact = $audio_impact
 
 var player_near = false
 var fall_timer = 0.0
@@ -24,8 +22,6 @@ func _process(delta):
 		if fall_timer <= 0.0:
 			gravity_scale = 1.0  # Enable gravity when player is near and timer ends
 			has_fallen = true  # Mark as fallen
-			audio_fall.play(0.2)
-			
 
 func _on_detection_area_body_entered(body):
 	if body.name == "Guy":
