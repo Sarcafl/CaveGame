@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dahfaomhhb5wd"]
+[gd_scene load_steps=22 format=3 uid="uid://dahfaomhhb5wd"]
 
 [ext_resource type="Texture2D" uid="uid://c5supv0udd8lc" path="res://Jupiner/MainTileset.png" id="1_4r4oj"]
 [ext_resource type="Texture2D" uid="uid://cu06u3jy72v8g" path="res://Jupiner/Tilesets/WaterTiles.png" id="2_tqkao"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="6_f4q73"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="7_c6un1"]
 [ext_resource type="AudioStream" uid="uid://bi27q6aonojca" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_poisonwater_loop.ogg" id="8_mxuee"]
+[ext_resource type="AudioStream" uid="uid://dedgngfpvempw" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_decorative_waterfall.wav" id="9_v0cp2"]
 [ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="9_y40ro"]
 [ext_resource type="Texture2D" uid="uid://bks6wjxag0ce6" path="res://Jupiner/Warnings.png" id="10_4nlxj"]
 [ext_resource type="AudioStream" uid="uid://b2qvmr3nt270v" path="res://Assets/Alfie Music and sfx/music/mystical_loop.wav" id="11_7js7j"]
@@ -1101,14 +1102,47 @@ position = Vector2(-128, -800)
 position = Vector2(128, -520)
 
 [node name="environment_water_static" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-105, -193)
+position = Vector2(-80, -201)
 stream = ExtResource("8_mxuee")
+volume_db = -6.0
 autoplay = true
 max_distance = 1500.0
 bus = &"SFX"
 
+[node name="environment_waterfall" type="AudioStreamPlayer2D" parent="environment_water_static"]
+position = Vector2(-121, 10)
+stream = ExtResource("9_v0cp2")
+volume_db = -32.0
+pitch_scale = 0.7
+autoplay = true
+max_distance = 500.0
+
+[node name="environment_waterfall3" type="AudioStreamPlayer2D" parent="environment_water_static"]
+position = Vector2(230, 716)
+stream = ExtResource("9_v0cp2")
+volume_db = -32.0
+pitch_scale = 0.7
+autoplay = true
+max_distance = 500.0
+
+[node name="environment_waterfall4" type="AudioStreamPlayer2D" parent="environment_water_static"]
+position = Vector2(502, 712)
+stream = ExtResource("9_v0cp2")
+volume_db = -32.0
+pitch_scale = 0.4
+autoplay = true
+max_distance = 500.0
+
+[node name="environment_waterfall2" type="AudioStreamPlayer2D" parent="environment_water_static"]
+position = Vector2(100, 9)
+stream = ExtResource("9_v0cp2")
+volume_db = -32.0
+pitch_scale = 0.5
+autoplay = true
+max_distance = 500.0
+
 [node name="environment_water_static4" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(166, -195)
+position = Vector2(167, -201)
 stream = ExtResource("8_mxuee")
 autoplay = true
 max_distance = 500.0
@@ -1688,7 +1722,9 @@ hframes = 2
 
 [node name="WarningSound" type="AudioStreamPlayer2D" parent="WarningSign"]
 stream = ExtResource("11_7js7j")
-volume_db = -2.0
+volume_db = -4.0
 autoplay = true
-max_distance = 500.0
-panning_strength = 1.5
+max_distance = 200.0
+attenuation = 0.5
+panning_strength = 0.0
+bus = &"SFX"

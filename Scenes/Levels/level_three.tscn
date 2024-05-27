@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cj8q8huctf6ik"]
+[gd_scene load_steps=27 format=3 uid="uid://cj8q8huctf6ik"]
 
 [ext_resource type="Texture2D" uid="uid://c5supv0udd8lc" path="res://Jupiner/MainTileset.png" id="1_gqmic"]
 [ext_resource type="Texture2D" uid="uid://d0vpfd0iee6vr" path="res://Jupiner/Tilesets/CrystalTileset.png" id="2_4ma3h"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://b2qvmr3nt270v" path="res://Assets/Alfie Music and sfx/music/mystical_loop.wav" id="10_ig4o0"]
 [ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="11_ovevg"]
 [ext_resource type="AudioStream" uid="uid://dedgngfpvempw" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_decorative_waterfall.wav" id="12_5pqle"]
+[ext_resource type="AudioStream" uid="uid://k7u3u5mgkoph" path="res://Assets/Alfie Music and sfx/escape_loop_01.wav" id="13_mmeve"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qp3j"]
 texture = ExtResource("1_gqmic")
@@ -1749,6 +1750,11 @@ sources/1 = SubResource("TileSetAtlasSource_n6fl8")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u7cg"]
 size = Vector2(14, 6)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qatvp"]
+streams_count = 1
+stream_0/stream = ExtResource("13_mmeve")
+stream_0/weight = 1.0
+
 [node name="level_layout" type="TileMap" groups=["floor"]]
 position = Vector2(-57, -81)
 tile_set = SubResource("TileSet_csh5g")
@@ -1775,10 +1781,12 @@ hframes = 2
 
 [node name="WarningSound" type="AudioStreamPlayer2D" parent="WarningSign"]
 stream = ExtResource("10_ig4o0")
-volume_db = -2.0
+volume_db = -1.0
+pitch_scale = 0.9
 autoplay = true
-max_distance = 500.0
-panning_strength = 1.5
+max_distance = 1000.0
+panning_strength = 0.0
+bus = &"SFX"
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -2247,43 +2255,63 @@ volume_db = -24.352
 autoplay = true
 max_distance = 500.0
 panning_strength = 1.5
+bus = &"SFX"
 
 [node name="environment_waterfall2" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(633, -179)
+position = Vector2(647, -180)
 stream = ExtResource("12_5pqle")
-volume_db = -24.352
+volume_db = -26.0
+pitch_scale = 1.3
 autoplay = true
 max_distance = 500.0
 panning_strength = 1.5
+bus = &"SFX"
 
 [node name="environment_waterfall3" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(759, -705)
 stream = ExtResource("12_5pqle")
-volume_db = -24.352
+volume_db = -26.0
+pitch_scale = 1.4
 autoplay = true
 max_distance = 500.0
 panning_strength = 1.5
+bus = &"SFX"
 
 [node name="environment_waterfall4" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1088, -759)
+position = Vector2(1066, -759)
 stream = ExtResource("12_5pqle")
-volume_db = -24.352
+volume_db = -26.0
 autoplay = true
 max_distance = 500.0
 panning_strength = 1.5
+bus = &"SFX"
 
 [node name="environment_waterfall5" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1240, -758)
 stream = ExtResource("12_5pqle")
-volume_db = -24.352
+volume_db = -26.0
+pitch_scale = 0.6
 autoplay = true
-max_distance = 500.0
+max_distance = 400.0
 panning_strength = 1.5
+bus = &"SFX"
 
 [node name="environment_waterfall6" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1436, -866)
 stream = ExtResource("12_5pqle")
-volume_db = -24.352
+volume_db = -33.0
+pitch_scale = 1.6
 autoplay = true
-max_distance = 500.0
+max_distance = 600.0
 panning_strength = 1.5
+bus = &"SFX"
+
+[node name="ambience_escape" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1592, -1135)
+stream = SubResource("AudioStreamRandomizer_qatvp")
+volume_db = -10.0
+pitch_scale = 0.85
+autoplay = true
+max_distance = 2500.0
+panning_strength = 0.5
+bus = &"SFX"

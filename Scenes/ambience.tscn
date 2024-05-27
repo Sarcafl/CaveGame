@@ -4,6 +4,6 @@
 
 [node name="Ambience" type="AudioStreamPlayer"]
 stream = ExtResource("1_iouhp")
-volume_db = -3.0
+volume_db = -6.0
 autoplay = true
 bus = &"Music"

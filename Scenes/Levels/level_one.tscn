@@ -1065,6 +1065,7 @@ volume_db = -24.352
 autoplay = true
 max_distance = 500.0
 panning_strength = 1.5
+bus = &"SFX"
 
 [node name="environment_waterfall2" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1529, 63)
@@ -1073,12 +1074,14 @@ volume_db = -22.736
 autoplay = true
 max_distance = 500.0
 panning_strength = 1.5
+bus = &"SFX"
 
 [node name="environment_water_static" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1533, 229)
 stream = ExtResource("9_6ocak")
 autoplay = true
 max_distance = 1000.0
+bus = &"SFX"
 
 [node name="WarningSign" type="Sprite2D" parent="."]
 position = Vector2(682, -115)
@@ -1086,8 +1089,11 @@ texture = ExtResource("10_1njjn")
 hframes = 2
 
 [node name="WarningSound" type="AudioStreamPlayer2D" parent="WarningSign"]
+position = Vector2(117, 7)
 stream = ExtResource("11_8knyw")
-volume_db = -2.0
+pitch_scale = 0.8
 autoplay = true
-max_distance = 500.0
-panning_strength = 1.5
+max_distance = 600.0
+attenuation = 2.0
+panning_strength = 0.5
+bus = &"SFX"

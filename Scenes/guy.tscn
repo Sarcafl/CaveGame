@@ -900,6 +900,7 @@ stream_1/stream = ExtResource("67_xgl4l")
 stream_1/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hkccc"]
+random_pitch = 1.2
 streams_count = 3
 stream_0/stream = ExtResource("68_hqbsh")
 stream_0/weight = 1.0
@@ -978,7 +979,7 @@ bus = &"SFX"
 
 [node name="audio_footstep_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_qlk5h")
-volume_db = -2.5
+volume_db = -4.0
 bus = &"SFX"
 
 [node name="FootstepTimer" type="Timer" parent="."]
@@ -995,7 +996,7 @@ bus = &"SFX"
 
 [node name="audio_jump_end_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hkccc")
-volume_db = -2.0
+volume_db = -4.0
 bus = &"SFX"
 
 [node name="Camera2D" type="Camera2D" parent="."]
