@@ -1074,7 +1074,6 @@ theme_override_fonts/font = ExtResource("73_ea6og")
 text = "QUIT"
 
 [node name="Candle" parent="Camera2D" instance=ExtResource("74_ug3pn")]
-z_index = -1
 position = Vector2(-9, 0)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
