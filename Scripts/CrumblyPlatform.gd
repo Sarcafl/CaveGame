@@ -15,7 +15,7 @@ func _on_area_2d_body_entered(body):
 			step_count +=1
 			if step_count >=max_steps:
 				animated_sprite.play("falling")
-				audio_falling.play(0.1)
+				audio_falling.play()
 			else:
 				is_crumbling = true
 				animated_sprite.play("stepped_on")
