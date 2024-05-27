@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cem4txcmrobsf"
+path="res://.godot/imported/environment_crumblingplatform_state02_01.wav-2df9d0681556076e0f8606c0e8d35703.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/sfx/environment_platform/environment_crumblingplatform_state02_01.wav"
+dest_files=["res://.godot/imported/environment_crumblingplatform_state02_01.wav-2df9d0681556076e0f8606c0e8d35703.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

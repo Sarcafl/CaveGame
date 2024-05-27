@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="A way up"
-run/main_scene="res://Scenes/menu.tscn"
+run/main_scene="res://Scenes/Levels/level_zero.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Ambience="*res://Scenes/ambience.tscn"
+GlobalTimer="*res://Scenes/Levels/GlobalTimer.gd"
 
 [display]
 
