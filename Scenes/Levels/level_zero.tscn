@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbkbyjiun5wkj"]
+[gd_scene load_steps=8 format=3 uid="uid://cbkbyjiun5wkj"]
 
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="1_vp3yp"]
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="2_hxspj"]
 [ext_resource type="PackedScene" uid="uid://coibvc7bn1suq" path="res://level_test_debug.tscn" id="3_nih85"]
 [ext_resource type="Texture2D" uid="uid://c2gtt2fxf630a" path="res://Jupiner/MainTitle.png" id="4_47e0j"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelCompletionTrigger.gd" id="7_wfgdq"]
+[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="8_5ibl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v73sp"]
 size = Vector2(1674, 20)
@@ -31,5 +32,17 @@ scenePath = "res://Scenes/MainGameScene.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_v73sp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("8_5ibl6")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

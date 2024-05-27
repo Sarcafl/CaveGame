@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://d3ve7kcm0tm6g"]
+[gd_scene load_steps=125 format=3 uid="uid://d3ve7kcm0tm6g"]
 
 [ext_resource type="Script" path="res://Scripts/Character/CharacterBody2D.gd" id="1_otn7k"]
 [ext_resource type="Texture2D" uid="uid://2n7qfjnjp63p" path="res://Jupiner/Player/CaveGuy-Sheet01.png" id="2_8cab8"]
@@ -57,7 +57,6 @@
 [ext_resource type="AudioStream" uid="uid://bfm7mmsoalj1o" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/dirt/player_jumpland_dirt_02.wav" id="63_6rewt"]
 [ext_resource type="AudioStream" uid="uid://cdejgdti6lepy" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/dirt/player_jumpland_dirt_03.wav" id="64_edjn4"]
 [ext_resource type="AudioStream" uid="uid://ce6kqe1nqcuus" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_14.wav" id="64_yar01"]
-[ext_resource type="AudioStream" uid="uid://dwmynlo8xkuy0" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/dirt/player_jumpland_dirt_04.wav" id="65_20jnv"]
 [ext_resource type="AudioStream" uid="uid://yelea4wakyxt" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_15.wav" id="65_b2361"]
 [ext_resource type="AudioStream" uid="uid://cmd87x67n8oys" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_16.wav" id="66_aa5ay"]
 [ext_resource type="AudioStream" uid="uid://pqxgctbf43s6" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/rock/player_jumpland_rock_01.wav" id="66_l41vj"]
@@ -74,10 +73,9 @@
 [ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="72_m82w6"]
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="73_ea6og"]
 [ext_resource type="PackedScene" uid="uid://ckyks25nk57vi" path="res://Jupiner/Candle/candle.tscn" id="74_ug3pn"]
-[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="75_ox7j8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y57l4"]
-size = Vector2(6, 13)
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ns7f"]
+radius = 7.07107
 
 [sub_resource type="Animation" id="Animation_gbbu6"]
 length = 0.001
@@ -473,18 +471,6 @@ tracks/4/keys = {
 "method": &"play_footstep_sound"
 }]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CPUParticles2D:emitting")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="Animation" id="Animation_oamli"]
 resource_name = "wall_hang"
@@ -768,6 +754,8 @@ transitions = ["move", "jump", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(-144, -109)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6885x"]
+random_pitch = 1.5
+random_volume_offset_db = 3.0
 streams_count = 6
 stream_0/stream = ExtResource("11_qapw3")
 stream_0/weight = 1.0
@@ -882,15 +870,14 @@ stream_15/stream = ExtResource("66_aa5ay")
 stream_15/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3ocmu"]
-streams_count = 4
+random_volume_offset_db = 2.0
+streams_count = 3
 stream_0/stream = ExtResource("62_2tv6b")
 stream_0/weight = 1.0
 stream_1/stream = ExtResource("63_6rewt")
 stream_1/weight = 1.0
 stream_2/stream = ExtResource("64_edjn4")
 stream_2/weight = 1.0
-stream_3/stream = ExtResource("65_20jnv")
-stream_3/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h71fk"]
 streams_count = 2
@@ -908,17 +895,13 @@ stream_1/weight = 1.0
 stream_2/stream = ExtResource("70_m4xpj")
 stream_2/weight = 1.0
 
-[sub_resource type="Gradient" id="Gradient_khj8k"]
-offsets = PackedFloat32Array(0, 0.167665, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.179641, 0.179641, 0.179641, 1, 1, 1, 1, 1)
-
 [node name="Guy" type="CharacterBody2D"]
 collision_mask = 5
 script = ExtResource("1_otn7k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8.5)
-shape = SubResource("RectangleShape2D_y57l4")
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_2ns7f")
 debug_color = Color(0.805208, 0.303287, 0.722757, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -968,6 +951,7 @@ state_machine = NodePath("../CharacterStateMachine")
 
 [node name="audio_jump_sound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_6885x")
+volume_db = -3.0
 bus = &"SFX"
 
 [node name="audio_footstep_rock" type="AudioStreamPlayer2D" parent="."]
@@ -976,10 +960,12 @@ bus = &"SFX"
 
 [node name="audio_footstep_dirt" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_1wlop")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="audio_footstep_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_qlk5h")
+volume_db = -2.5
 bus = &"SFX"
 
 [node name="FootstepTimer" type="Timer" parent="."]
@@ -990,6 +976,7 @@ position = Vector2(0, 15)
 
 [node name="audio_jump_end_dirt" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_3ocmu")
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="audio_jump_end_rock" type="AudioStreamPlayer2D" parent="."]
@@ -998,6 +985,7 @@ bus = &"SFX"
 
 [node name="audio_jump_end_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hkccc")
+volume_db = -2.0
 bus = &"SFX"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1067,34 +1055,6 @@ text = "QUIT"
 [node name="Candle" parent="Camera2D" instance=ExtResource("74_ug3pn")]
 z_index = -1
 position = Vector2(-9, 0)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("75_ox7j8")
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(-4, 15)
-emitting = false
-one_shot = true
-explosiveness = 0.1
-emission_shape = 2
-emission_sphere_radius = 1.0
-direction = Vector2(15, -60)
-gravity = Vector2(-15, -15)
-radial_accel_min = -36.45
-radial_accel_max = 74.77
-scale_amount_min = 0.0
-scale_amount_max = 2.0
-color = Color(0.197937, 0.197937, 0.197937, 1)
-color_ramp = SubResource("Gradient_khj8k")
 
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Landing" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="FootstepTimer" to="." method="_on_footstep_timer_timeout"]

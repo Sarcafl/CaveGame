@@ -1,30 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5qedv5h4soge"]
+[gd_scene load_steps=2 format=3 uid="uid://c5qedv5h4soge"]
 
 [ext_resource type="Script" path="res://Scripts/KillZone.gd" id="1_66pvp"]
-[ext_resource type="AudioStream" uid="uid://djexgls525r4k" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_01.wav" id="2_ayc3m"]
-[ext_resource type="AudioStream" uid="uid://cdip30jloinuq" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_02.wav" id="3_g3pd1"]
-[ext_resource type="AudioStream" uid="uid://vyp278ma2do7" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_03.wav" id="4_0082l"]
-[ext_resource type="AudioStream" uid="uid://b32sase71ntmg" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_04.wav" id="5_qsjif"]
-[ext_resource type="AudioStream" uid="uid://cngel0cbqyfmo" path="res://Assets/Alfie Music and sfx/death_sounds/player_death_respawn_05.wav" id="6_md1vi"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_irfh5"]
-streams_count = 5
-stream_0/stream = ExtResource("2_ayc3m")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("3_g3pd1")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("4_0082l")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("5_qsjif")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("6_md1vi")
-stream_4/weight = 1.0
 
 [node name="KillZone" type="Area2D"]
 script = ExtResource("1_66pvp")
 
-[node name="DeathSounds" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_irfh5")
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="finished" from="DeathSounds" to="." method="_on_death_sounds_finished"]
