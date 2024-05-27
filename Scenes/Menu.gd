@@ -48,7 +48,7 @@ func _process(delta):
 	
 	if timer < waitTime : 
 		timer += delta
-		fader.modulate = (lerp(Color(0,0,0,0), Color(0,0,0,1), timer/waitTime))
+		if targetScene.contains("zero") : fader.modulate = (lerp(Color(0,0,0,0), Color(0,0,0,1), timer/waitTime))
 		return
 	
 	sceneChanging = false;
