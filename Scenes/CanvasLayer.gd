@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var time = SpeedrunTimer.speedrun_time
 	update_ui(time)
 

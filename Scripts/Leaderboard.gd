@@ -25,10 +25,15 @@ func load_leaderboard():
 	leaderboard_entries.clear()
 	
 	for entry in leaderboard:
-		leaderboard_entries.append({
-			"Level": entry["Level"],
-			"Time": entry["Time"]
-		})
+		# Debugging: Print each entry to verify its structure
+		print(entry)
+		if "Level" in entry and "Time" in entry:
+			leaderboard_entries.append({
+				"Level": entry["Level"],
+				"Time": entry["Time"]
+			})
+		else:
+			print("Invalid entry: ", entry)
 	
 	# Sort entries by time (ascending)
 	leaderboard_entries.sort_custom(compare_times)

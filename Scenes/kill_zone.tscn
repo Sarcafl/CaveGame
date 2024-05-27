@@ -25,6 +25,7 @@ script = ExtResource("1_66pvp")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_n6dtd")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="DeathSound" to="." method="_on_death_sound_finished"]

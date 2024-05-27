@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://d3ve7kcm0tm6g"]
+[gd_scene load_steps=128 format=3 uid="uid://d3ve7kcm0tm6g"]
 
 [ext_resource type="Script" path="res://Scripts/Character/CharacterBody2D.gd" id="1_otn7k"]
 [ext_resource type="Texture2D" uid="uid://2n7qfjnjp63p" path="res://Jupiner/Player/CaveGuy-Sheet01.png" id="2_8cab8"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://Scripts/Character/GroundState.gd" id="7_urc73"]
 [ext_resource type="Script" path="res://Scripts/Character/AirState.gd" id="8_j3nvv"]
 [ext_resource type="Script" path="res://Scripts/Character/LandingState.gd" id="9_j3trq"]
-[ext_resource type="Script" path="res://Scripts/Character/StateDebugLabel.gd" id="10_0y2rs"]
 [ext_resource type="AudioStream" uid="uid://ba2nn1agkvh7f" path="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_01.wav" id="11_qapw3"]
 [ext_resource type="AudioStream" uid="uid://bi55c82e72ivv" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/dirt/player_footsteps_dirt_01.wav" id="12_5pea3"]
 [ext_resource type="AudioStream" uid="uid://c2btrwttkioi1" path="res://Assets/Alfie Music and sfx/sfx/player/player_jump/player_jump_02.wav" id="12_8v0hl"]
@@ -962,16 +961,6 @@ landing_state = NodePath("../Landing")
 [node name="Landing" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("ground_state")]
 script = ExtResource("9_j3trq")
 ground_state = NodePath("../Ground")
-
-[node name="StateDebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
-visible = false
-offset_top = -74.0
-offset_right = 116.0
-offset_bottom = -51.0
-theme_override_font_sizes/font_size = 16
-text = "State:"
-script = ExtResource("10_0y2rs")
-state_machine = NodePath("../CharacterStateMachine")
 
 [node name="audio_jump_sound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_6885x")
