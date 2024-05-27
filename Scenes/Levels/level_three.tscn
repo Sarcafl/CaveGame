@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cj8q8huctf6ik"]
+[gd_scene load_steps=19 format=3 uid="uid://cj8q8huctf6ik"]
 
 [ext_resource type="Texture2D" uid="uid://c5supv0udd8lc" path="res://Jupiner/MainTileset.png" id="1_gqmic"]
 [ext_resource type="Texture2D" uid="uid://d0vpfd0iee6vr" path="res://Jupiner/Tilesets/CrystalTileset.png" id="2_4ma3h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3xx3itxgjcde" path="res://Jupiner/Tilesets/Decorative-Waterfall.png" id="4_08cxs"]
 [ext_resource type="Texture2D" uid="uid://cpxy7qvxee80e" path="res://Jupiner/Tilesets/DecorativeTiles.png" id="5_xjue5"]
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="6_45e5t"]
+[ext_resource type="Texture2D" uid="uid://bks6wjxag0ce6" path="res://Jupiner/Warnings.png" id="8_f18t1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qp3j"]
 texture = ExtResource("1_gqmic")
@@ -1771,3 +1772,8 @@ position = Vector2(769, -639)
 
 [node name="CrumblyPlatform6" parent="." instance=ExtResource("6_45e5t")]
 position = Vector2(734, -517)
+
+[node name="Decoration-Warning" type="Sprite2D" parent="."]
+position = Vector2(1606, -852)
+texture = ExtResource("8_f18t1")
+hframes = 2
