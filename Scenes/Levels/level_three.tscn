@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cj8q8huctf6ik"]
+[gd_scene load_steps=18 format=3 uid="uid://cj8q8huctf6ik"]
 
 [ext_resource type="Texture2D" uid="uid://c5supv0udd8lc" path="res://Jupiner/MainTileset.png" id="1_gqmic"]
 [ext_resource type="Texture2D" uid="uid://d0vpfd0iee6vr" path="res://Jupiner/Tilesets/CrystalTileset.png" id="2_4ma3h"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d3xx3itxgjcde" path="res://Jupiner/Tilesets/Decorative-Waterfall.png" id="4_08cxs"]
 [ext_resource type="Texture2D" uid="uid://cpxy7qvxee80e" path="res://Jupiner/Tilesets/DecorativeTiles.png" id="5_xjue5"]
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="6_45e5t"]
-[ext_resource type="Texture2D" uid="uid://cnsgsjvlem2lu" path="res://Jupiner/Rope.png" id="7_wsv2k"]
-[ext_resource type="Texture2D" uid="uid://bks6wjxag0ce6" path="res://Jupiner/Warnings.png" id="8_f18t1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qp3j"]
 texture = ExtResource("1_gqmic")
@@ -1734,14 +1732,8 @@ texture = ExtResource("5_xjue5")
 5:2/0 = 0
 6:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yda5m"]
-texture = ExtResource("7_wsv2k")
-0:0/0 = 0
-0:1/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_fnidx"]
 sources/0 = SubResource("TileSetAtlasSource_qgr0t")
-sources/1 = SubResource("TileSetAtlasSource_yda5m")
 
 [node name="level_layout" type="TileMap" groups=["floor"]]
 position = Vector2(-57, -81)
@@ -1760,7 +1752,7 @@ layer_0/tile_data = PackedInt32Array(-4849683, 0, 3, -4784147, 0, 3, -4718611, 0
 [node name="Decorations" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_fnidx")
 format = 2
-layer_0/tile_data = PackedInt32Array(-3014578, 65536, 0, -3014573, 65536, 0, -3014569, 65536, 0, -3211172, 65536, 0, -3407779, 65536, 0, -3473311, 65536, 0, -3473308, 65536, 0, -3473313, 196608, 0, -3276699, 196608, 0, -3014554, 327680, 0, -3014571, 0, 2, -3014570, 65536, 2, -3014575, 0, 2, -3014574, 65536, 2, -3014587, 0, 2, -3014586, 65536, 2, -3014598, 65536, 1, -3014606, 262144, 0, -3014602, 262144, 0, -3014600, 65536, 0, -3014594, 65536, 0, -2752494, 65536, 0, -2752490, 196608, 0, -2752488, 327680, 2, -1966064, 327680, 2, -3669917, 1, 1, -3735453, 1, 0, -3800989, 1, 0, -3866525, 1, 0, -3932061, 1, 0, -3997597, 1, 0, -4063133, 1, 0, -4128669, 1, 0, -4194205, 1, 0, -4259741, 1, 0, -4325277, 1, 0, -4390813, 1, 0, -4456349, 1, 0, -4521885, 1, 0, -4587421, 1, 0, -4652957, 1, 0)
+layer_0/tile_data = PackedInt32Array(-3014578, 65536, 0, -3014573, 65536, 0, -3014569, 65536, 0, -3211172, 65536, 0, -3407779, 65536, 0, -3473311, 65536, 0, -3473308, 65536, 0, -3473313, 196608, 0, -3276699, 196608, 0, -3014554, 327680, 0, -3014571, 0, 2, -3014570, 65536, 2, -3014575, 0, 2, -3014574, 65536, 2, -3014587, 0, 2, -3014586, 65536, 2, -3014598, 65536, 1, -3014606, 262144, 0, -3014602, 262144, 0, -3014600, 65536, 0, -3014594, 65536, 0, -2752494, 65536, 0, -2752490, 196608, 0, -2752488, 327680, 2, -1966064, 327680, 2)
 
 [node name="CrumblyPlatform" parent="." instance=ExtResource("6_45e5t")]
 position = Vector2(531, -82)
@@ -1779,8 +1771,3 @@ position = Vector2(769, -639)
 
 [node name="CrumblyPlatform6" parent="." instance=ExtResource("6_45e5t")]
 position = Vector2(734, -517)
-
-[node name="Decoration-Warning" type="Sprite2D" parent="."]
-position = Vector2(1606, -852)
-texture = ExtResource("8_f18t1")
-hframes = 2
