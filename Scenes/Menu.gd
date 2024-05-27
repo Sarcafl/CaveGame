@@ -46,15 +46,14 @@ func _on_quit_pressed():
 func _process(delta):
 	if not sceneChanging : return
 	
-	if timer < waitTime : 
+	if timer < waitTime and targetScene.contains("zero") : 
 		timer += delta
-		if targetScene.contains("zero") : fader.modulate = (lerp(Color(0,0,0,0), Color(0,0,0,1), timer/waitTime))
+		fader.modulate = (lerp(Color(0,0,0,0), Color(0,0,0,1), timer/waitTime))
 		return
 	
 	sceneChanging = false;
 	timer = 0
 	
-	print(targetScene)
 	get_tree().change_scene_to_file(targetScene)
 
 
