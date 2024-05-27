@@ -20,7 +20,7 @@ func _on_resume_pressed():
 func _on_quit_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-
+	
 func show_pause_menu():
 	get_tree().paused = true
 	show()

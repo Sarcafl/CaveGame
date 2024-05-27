@@ -34,7 +34,8 @@ func _on_detection_area_body_exited(body):
 		if has_fallen:
 			var current_y = global_position.y
 			if abs(current_y - initial_y) > 1:  # Check if the y position has changed significantly
-				ground_timer.start()  # Start the timer to delete the rock
+				if ground_timer.is_inside_tree():  # Ensure the timer is inside the scene tree
+					ground_timer.start(delete_delay)  # Start the timer to delete the rock
 
 func _on_jump_area_body_entered(body):
 	if body.name == "Guy":

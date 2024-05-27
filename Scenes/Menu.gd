@@ -9,7 +9,7 @@ func _ready():
 	pass
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainGameScene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/level_zero.tscn")
 
 func _on_options_pressed():
 	get_tree().change_scene_to_file("res://Scenes/OptionsMenu.tscn")

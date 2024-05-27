@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbkbyjiun5wkj"]
+[gd_scene load_steps=8 format=3 uid="uid://cbkbyjiun5wkj"]
 
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="1_vp3yp"]
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="2_hxspj"]
-[ext_resource type="PackedScene" uid="uid://ckyks25nk57vi" path="res://Jupiner/Candle/candle.tscn" id="3_a7f0h"]
 [ext_resource type="PackedScene" uid="uid://coibvc7bn1suq" path="res://level_test_debug.tscn" id="3_nih85"]
 [ext_resource type="Texture2D" uid="uid://c2gtt2fxf630a" path="res://Jupiner/MainTitle.png" id="4_47e0j"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelCompletionTrigger.gd" id="7_wfgdq"]
@@ -18,11 +17,6 @@ position = Vector2(3, 60)
 
 [node name="Guy" parent="." instance=ExtResource("2_hxspj")]
 
-[node name="Camera2D" type="Camera2D" parent="Guy"]
-zoom = Vector2(2.8, 2.8)
-
-[node name="Candle" parent="Guy" instance=ExtResource("3_a7f0h")]
-
 [node name="level_layout" parent="." instance=ExtResource("3_nih85")]
 
 [node name="MenuPic" type="CanvasLayer" parent="."]
@@ -34,6 +28,7 @@ texture = ExtResource("4_47e0j")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 467)
 script = ExtResource("7_wfgdq")
+scenePath = "res://Scenes/MainGameScene.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_v73sp")

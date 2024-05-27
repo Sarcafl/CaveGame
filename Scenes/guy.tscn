@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://d3ve7kcm0tm6g"]
+[gd_scene load_steps=126 format=3 uid="uid://d3ve7kcm0tm6g"]
 
 [ext_resource type="Script" path="res://Scripts/Character/CharacterBody2D.gd" id="1_otn7k"]
 [ext_resource type="Texture2D" uid="uid://2n7qfjnjp63p" path="res://Jupiner/Player/CaveGuy-Sheet01.png" id="2_8cab8"]
@@ -69,7 +69,11 @@
 [ext_resource type="AudioStream" uid="uid://32bnt03j4t3q" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_03.wav" id="69_sg344"]
 [ext_resource type="AudioStream" uid="uid://iyyngsgctg0d" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_04.wav" id="70_72lj3"]
 [ext_resource type="AudioStream" uid="uid://cg6jhsyhc3err" path="res://Assets/Alfie Music and sfx/sfx/player/player_jumpland/crystal/player_jumpland_crystal_03.wav" id="70_m4xpj"]
+[ext_resource type="Script" path="res://Scenes/UI_MANAGER.gd" id="71_6q6pg"]
 [ext_resource type="AudioStream" uid="uid://b84w0ua6vemcs" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_05.wav" id="71_s58ul"]
+[ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="72_m82w6"]
+[ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="73_ea6og"]
+[ext_resource type="PackedScene" uid="uid://ckyks25nk57vi" path="res://Jupiner/Candle/candle.tscn" id="74_ug3pn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ns7f"]
 radius = 7.07107
@@ -979,5 +983,75 @@ bus = &"SFX"
 stream = SubResource("AudioStreamRandomizer_hkccc")
 bus = &"SFX"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, -4)
+zoom = Vector2(2.8, 2.8)
+
+[node name="ui_manager" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("71_6q6pg")
+
+[node name="PauseMenu" type="Control" parent="Camera2D/ui_manager"]
+process_priority = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("72_m82w6")
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/ui_manager/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -50.5
+offset_right = 39.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/ui_manager/PauseMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Resume" type="Button" parent="Camera2D/ui_manager/PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("73_ea6og")
+text = "RESUME"
+
+[node name="Quit" type="Button" parent="Camera2D/ui_manager/PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("73_ea6og")
+text = "QUIT"
+
+[node name="Candle" parent="Camera2D" instance=ExtResource("74_ug3pn")]
+z_index = -1
+position = Vector2(-9, 0)
+
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Landing" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="FootstepTimer" to="." method="_on_footstep_timer_timeout"]
+[connection signal="pressed" from="Camera2D/ui_manager/PauseMenu/MarginContainer/VBoxContainer/Resume" to="Camera2D/ui_manager/PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Camera2D/ui_manager/PauseMenu/MarginContainer/VBoxContainer/Quit" to="Camera2D/ui_manager/PauseMenu" method="_on_quit_pressed"]

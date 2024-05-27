@@ -55,6 +55,7 @@ shape = SubResource("RectangleShape2D_5tq2x")
 debug_color = Color(0.588354, 0.0221177, 0, 0.42)
 
 [node name="GroundTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
