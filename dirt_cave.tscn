@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="4_anyek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoyde"]
+size = Vector2(20, 40)
 
 [node name="DirtCave" type="Node2D"]
 
@@ -19,6 +20,7 @@ position = Vector2(689, 140)
 script = ExtResource("3_0kqxl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_yoyde")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

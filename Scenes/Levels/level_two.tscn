@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dahfaomhhb5wd"]
+[gd_scene load_steps=19 format=3 uid="uid://dahfaomhhb5wd"]
 
 [ext_resource type="Texture2D" uid="uid://c5supv0udd8lc" path="res://Jupiner/MainTileset.png" id="1_4r4oj"]
 [ext_resource type="Texture2D" uid="uid://cu06u3jy72v8g" path="res://Jupiner/Tilesets/WaterTiles.png" id="2_tqkao"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://byonwoiqossu3" path="res://Scenes/crumbly_platform.tscn" id="6_f4q73"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="7_c6un1"]
 [ext_resource type="AudioStream" uid="uid://bi27q6aonojca" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_poisonwater_loop.ogg" id="8_mxuee"]
+[ext_resource type="Texture2D" path="res://Jupiner/Warnings.png" id="9_xbv7o"]
+[ext_resource type="AudioStream" uid="uid://b2qvmr3nt270v" path="res://Assets/Alfie Music and sfx/music/mystical_loop.wav" id="10_u3bg8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qp3j"]
 texture = ExtResource("1_4r4oj")
@@ -1120,3 +1122,14 @@ position = Vector2(285, 505)
 stream = ExtResource("8_mxuee")
 autoplay = true
 bus = &"SFX"
+
+[node name="WarningSign" type="Sprite2D" parent="."]
+position = Vector2(-490, -293)
+texture = ExtResource("9_xbv7o")
+hframes = 2
+
+[node name="warningSound" type="AudioStreamPlayer2D" parent="WarningSign"]
+stream = ExtResource("10_u3bg8")
+autoplay = true
+max_distance = 500.0
+panning_strength = 1.5

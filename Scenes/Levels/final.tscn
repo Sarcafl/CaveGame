@@ -8,4 +8,4 @@
 [node name="level_layout" parent="." instance=ExtResource("1_6bhiy")]
 
 [node name="Guy" parent="." instance=ExtResource("2_t0blw")]
-position = Vector2(-213, -61)
+position = Vector2(-183, -59)

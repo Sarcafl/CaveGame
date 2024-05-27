@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2qvmr3nt270v"
+path="res://.godot/imported/mystical_loop.wav-b2fcb055109a5f63f1b11576f5f26dcc.sample"
+
+[deps]
+
+source_file="res://Assets/Alfie Music and sfx/music/mystical_loop.wav"
+dest_files=["res://.godot/imported/mystical_loop.wav-b2fcb055109a5f63f1b11576f5f26dcc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
