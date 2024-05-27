@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 200.0
-@export var max_wall_jumps: int = 1  # Maximum wall jumps allowed
+@export var max_wall_jumps: int = 3 # Maximum wall jumps allowed
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -10,7 +10,6 @@ extends CharacterBody2D
 @onready var audio_jump_end_dirt = $audio_jump_end_dirt
 @onready var audio_jump_end_rock = $audio_jump_end_rock
 @onready var audio_jump_end_crystal = $audio_jump_end_crystal
-
 @onready var audio_footstep_dirt: AudioStreamPlayer2D = $audio_footstep_dirt
 @onready var audio_footstep_rock: AudioStreamPlayer2D = $audio_footstep_rock
 @onready var audio_footstep_crystal: AudioStreamPlayer2D = $audio_footstep_crystal

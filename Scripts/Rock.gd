@@ -1,36 +1,45 @@
 extends RigidBody2D
 
 @export var fall_delay = 1.0  # Time delay before the rock falls
+@export var delete_delay = 5.0  # Time delay before the rock is deleted after hitting the ground
 @onready var detection_area = $DetectionArea
 @onready var jump_area = $JumpArea
+@onready var ground_timer = $GroundTimer  # Ensure this Timer node is added to the scene
 
 var player_near = false
 var fall_timer = 0.0
+var initial_y = 0.0
+var has_fallen = false
 
 func _ready():
 	gravity_scale = 0.0  # Initially disable gravity
 	fall_timer = fall_delay  # Initialize the fall timer
+	initial_y = global_position.y  # Store the initial y position
 
 func _process(delta):
-	if player_near:
+	if player_near and not has_fallen:
 		fall_timer -= delta
 		if fall_timer <= 0.0:
 			gravity_scale = 1.0  # Enable gravity when player is near and timer ends
-	else:
-		gravity_scale = 0.0  # Ensure gravity is disabled if player is not near
+			has_fallen = true  # Mark as fallen
 
 func _on_detection_area_body_entered(body):
 	if body.name == "Guy":
 		player_near = true
 		fall_timer = fall_delay  # Reset the fall timer
-		print("I found the player")
 
 func _on_detection_area_body_exited(body):
 	if body.name == "Guy":
 		player_near = false
-		print("I lost the player")
+		if has_fallen:
+			var current_y = global_position.y
+			if abs(current_y - initial_y) > 1:  # Check if the y position has changed significantly
+				ground_timer.start()  # Start the timer to delete the rock
 
 func _on_jump_area_body_entered(body):
 	if body.name == "Guy":
 		var player = body as CharacterBody2D
 		player.velocity = Vector2(player.velocity.x, -400)  # Apply a high jump
+
+func _on_ground_timer_timeout():
+	queue_free()  # Delete the rock after the timer ends

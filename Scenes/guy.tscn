@@ -72,7 +72,7 @@
 [ext_resource type="AudioStream" uid="uid://b84w0ua6vemcs" path="res://Assets/Alfie Music and sfx/sfx/player/player_footsteps/crystal/player_footsteps_crystal_05.wav" id="71_s58ul"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ns7f"]
-radius = 9.51315
+radius = 7.07107
 
 [sub_resource type="Animation" id="Animation_gbbu6"]
 length = 0.001
@@ -896,19 +896,9 @@ collision_mask = 5
 script = ExtResource("1_otn7k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_2ns7f")
 debug_color = Color(0.805208, 0.303287, 0.722757, 0.42)
-
-[node name="left" type="RayCast2D" parent="."]
-position = Vector2(-4, 7)
-rotation = 1.57079
-target_position = Vector2(-3.09944e-05, 14)
-
-[node name="right" type="RayCast2D" parent="."]
-position = Vector2(5, 7)
-rotation = -1.57079
-target_position = Vector2(2.43187e-05, 11)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -979,12 +969,15 @@ position = Vector2(0, 15)
 
 [node name="audio_jump_end_dirt" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_3ocmu")
+bus = &"SFX"
 
 [node name="audio_jump_end_rock" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_h71fk")
+bus = &"SFX"
 
 [node name="audio_jump_end_crystal" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hkccc")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimationTree" to="CharacterStateMachine/Landing" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="FootstepTimer" to="." method="_on_footstep_timer_timeout"]

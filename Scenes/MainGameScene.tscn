@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dekpr1jetst0i"]
+[gd_scene load_steps=12 format=3 uid="uid://dekpr1jetst0i"]
 
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_3oal4"]
 [ext_resource type="PackedScene" uid="uid://duiw6db2u8gyx" path="res://Scenes/Levels/level_one.tscn" id="4_e0and"]
@@ -7,17 +7,22 @@
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="4_udvca"]
 [ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="4_x1fpq"]
 [ext_resource type="PackedScene" uid="uid://ckyks25nk57vi" path="res://Jupiner/Candle/candle.tscn" id="5_yqrv2"]
+[ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="8_w3bvx"]
+[ext_resource type="PackedScene" uid="uid://c5qedv5h4soge" path="res://Scenes/kill_zone.tscn" id="9_bv4uo"]
+[ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="10_ggn47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5cav"]
+size = Vector2(20, 10)
 
 [node name="Main" type="Node2D"]
 
 [node name="Guy" parent="." instance=ExtResource("1_3oal4")]
 z_index = 10
-position = Vector2(-28, -79)
+position = Vector2(-59, -614)
 
 [node name="Camera2D" type="Camera2D" parent="Guy"]
 position = Vector2(8, -4)
 zoom = Vector2(2.5, 2.5)
-position_smoothing_enabled = true
 
 [node name="ui_manager" type="Control" parent="Guy/Camera2D"]
 layout_mode = 3
@@ -89,6 +94,264 @@ position = Vector2(105, -76)
 [node name="Node" type="Node" parent="."]
 
 [node name="level_layout" parent="." instance=ExtResource("4_e0and")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("8_w3bvx")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="KillZones" type="Node" parent="."]
+
+[node name="KillZone" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(296, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone2" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(317, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone2"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone3" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(326, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone3"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone4" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(839, 97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone4"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone5" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(951, 289)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone5"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone6" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(971, 289)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone6"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone7" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(991, 289)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone7"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone8" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(999, 289)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone8"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone9" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1303, 318)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone9"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone10" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1323, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone10"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone11" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1343, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone11"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone12" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1363, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone12"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone13" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1383, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone13"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone14" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1399, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone14"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone15" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1447, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone15"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone16" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1467, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone16"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone17" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1487, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone17"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone18" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1507, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone18"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone19" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1527, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone19"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone20" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1547, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone20"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone21" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1479, -159)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone21"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone22" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1500, -159)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone22"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone23" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1537, -158)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone23"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone24" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1558, -158)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone24"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone25" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1201, -318)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone25"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone26" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(1213, -318)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone26"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="Stalactites" type="Node" parent="."]
+
+[node name="Rock" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(63, -172)
+
+[node name="Rock2" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(89, -172)
+
+[node name="Rock3" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(255, -93)
+
+[node name="Rock4" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(303, -77)
+
+[node name="Rock5" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(335, -61)
+
+[node name="Rock6" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(406, -300)
+
+[node name="Rock7" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(329, -316)
+
+[node name="Rock8" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(266, -316)
+
+[node name="Rock9" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(589, -589)
+
+[node name="Rock10" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(957, -398)
+
+[node name="Rock11" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(999, -238)
+
+[node name="Rock12" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(861, -125)
+
+[node name="Rock13" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(1196, 244)
+
+[node name="Rock14" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(1602, 83)
+
+[node name="Rock15" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(1629, 149)
+
+[node name="Rock16" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(1621, -76)
+
+[node name="Rock17" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(1455, -301)
+
+[node name="Rock18" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(1566, -334)
+
+[node name="Rock19" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(1635, -411)
+
+[node name="Rock20" parent="Stalactites" instance=ExtResource("10_ggn47")]
+position = Vector2(1120, -411)
 
 [connection signal="pressed" from="Guy/Camera2D/ui_manager/PauseMenu/MarginContainer/VBoxContainer/Resume" to="Guy/Camera2D/ui_manager/PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="Guy/Camera2D/ui_manager/PauseMenu/MarginContainer/VBoxContainer/Quit" to="Guy/Camera2D/ui_manager/PauseMenu" method="_on_quit_pressed"]

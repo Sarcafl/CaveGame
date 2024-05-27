@@ -59,7 +59,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"falling",
-"speed": 10.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -102,6 +102,7 @@ script = ExtResource("1_c8k3q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ev7v3")
+animation = &"falling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8.5)
@@ -117,9 +118,11 @@ debug_color = Color(0.785241, 0.344522, 0.676144, 0.42)
 
 [node name="audio_stepped_on" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_ivwgm")
+bus = &"SFX"
 
 [node name="audio_falling" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_v5q4y")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
