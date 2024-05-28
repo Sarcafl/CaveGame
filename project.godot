@@ -13,7 +13,7 @@ config_version=5
 config/name="A way up"
 run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://Assets/GameIcon.png"
+config/icon="res://Assets/icon.png"
 
 [autoload]
 

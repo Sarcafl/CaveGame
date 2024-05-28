@@ -54,9 +54,9 @@ func update_animation_parameters():
 	animation_tree.set("parameters/move/blend_position", direction.x)
 
 func update_facing_direction():
-	if direction.x > 0:
+	if direction.x > 0.1:
 		sprite.flip_h = false
-	elif direction.x < 0:
+	elif direction.x < -0.1:
 		sprite.flip_h = true
 	
 func play_footstep_sound():
