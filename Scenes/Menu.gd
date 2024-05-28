@@ -28,14 +28,16 @@ func _on_play_pressed():
 func _on_options_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/OptionsMenu.tscn")
 	targetScene = "res://Scenes/OptionsMenu.tscn"
-	sceneChanging = true
+	get_tree().change_scene_to_file(targetScene)
+	#sceneChanging = true
 	
 	audio_click.play()
 	
 func _on_credits_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 	targetScene = "res://Scenes/credits.tscn"
-	sceneChanging = true
+	get_tree().change_scene_to_file(targetScene)
+	#sceneChanging = true
 	
 	audio_click.play()
 	
@@ -54,6 +56,6 @@ func _process(delta):
 	timer = 0
 	
 	get_tree().change_scene_to_file(targetScene)
-	Fader._fade(0.5, true, false)
+	if targetScene.contains("zero") : Fader._fade(0.5, true, false)
 
 
