@@ -1788,7 +1788,7 @@ hframes = 2
 
 [node name="WarningSound" type="AudioStreamPlayer2D" parent="WarningSign"]
 stream = ExtResource("10_ig4o0")
-volume_db = -1.0
+volume_db = 8.0
 pitch_scale = 0.9
 autoplay = true
 max_distance = 1000.0

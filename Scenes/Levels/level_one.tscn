@@ -1089,8 +1089,9 @@ texture = ExtResource("10_1njjn")
 hframes = 2
 
 [node name="WarningSound" type="AudioStreamPlayer2D" parent="WarningSign"]
-position = Vector2(117, 7)
+position = Vector2(2, 0)
 stream = ExtResource("11_8knyw")
+volume_db = 10.0
 pitch_scale = 0.8
 autoplay = true
 max_distance = 600.0
