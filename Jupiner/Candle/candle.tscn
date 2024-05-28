@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckyks25nk57vi"]
+[gd_scene load_steps=5 format=3 uid="uid://ckyks25nk57vi"]
 
 [ext_resource type="Texture2D" uid="uid://dj13ywacny4rk" path="res://Jupiner/Candle/CandleMask-sheet.png" id="1_bkyud"]
 [ext_resource type="Script" path="res://Scenes/AnimatedMask.gd" id="2_4jxwe"]
-[ext_resource type="Shader" path="res://Jupiner/MultiplyBlendShader.gdshader" id="3_2lyjy"]
 [ext_resource type="Texture2D" uid="uid://m8yk4ct6iuen" path="res://Jupiner/Candle/Darkness.png" id="4_mmc1m"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1w26e"]
-shader = ExtResource("3_2lyjy")
-shader_parameter/alpha = 1.0
-shader_parameter/overlay = ExtResource("4_mmc1m")
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1h0df"]
+blend_mode = 3
 
 [node name="Candle" type="Sprite2D"]
 clip_children = 1
@@ -20,5 +17,5 @@ script = ExtResource("2_4jxwe")
 speed = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_1w26e")
+material = SubResource("CanvasItemMaterial_1h0df")
 texture = ExtResource("4_mmc1m")
