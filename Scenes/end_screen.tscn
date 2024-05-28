@@ -121,7 +121,7 @@ offset_top = -22.5926
 offset_right = 1082.51
 offset_bottom = 82.8889
 text = "Programmer, UI: 
-@FlowConstruct/Crendom  
+FlowConstruct / Crendom  
 youtube.com/channel/UCSLmuJcCM24g__8KDV_ZHEA
 crendom.itch.io"
 label_settings = SubResource("LabelSettings_sinq7")
@@ -138,9 +138,9 @@ offset_top = -22.5926
 offset_right = 1082.51
 offset_bottom = 82.8889
 text = "Music / SFX: 
-@Alfie  
+Alfie Morris
 alfiemorris.itch.io
-x.com/alfiesound"
+twitter: @alfiesound"
 label_settings = SubResource("LabelSettings_sinq7")
 metadata/_edit_use_anchors_ = true
 
@@ -155,7 +155,7 @@ offset_top = -22.5926
 offset_right = 1082.51
 offset_bottom = 82.8889
 text = "Art, Level Design : 
-@Monthbug
+Juniper Foley
 monthbug.itch.io
 twitter / insta: @squishthing"
 label_settings = SubResource("LabelSettings_sinq7")

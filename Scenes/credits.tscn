@@ -36,12 +36,12 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 text = "Credits:
-Art, Level Design : @Juniper  https://monthbug.itch.io/
+Art, Level Design : @Juniper Foley  | monthbug.itch.io/
 twitter / insta: @squishthing
-Music/SFX: @Alfie  https://alfiemorris.itch.io/
-https://x.com/alfiesound
-Programmer, UI: @FlowConstruct/Crendom  @https://www.youtube.com/channel/UCSLmuJcCM24g__8KDV_ZHEA
-https://crendom.itch.io"
+Music/SFX: @Alfie  | alfiemorris.itch.io/
+twitter: @alfiesound
+Programmer, UI: @FlowConstruct/Crendom | crendom.itch.io  
+https://www.youtube.com/channel/UCSLmuJcCM24g__8KDV_ZHEA"
 horizontal_alignment = 1
 
 [node name="BACK" type="Button" parent="."]
