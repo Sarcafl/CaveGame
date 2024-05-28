@@ -20,6 +20,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: Vector2 = Vector2.ZERO
 
 var wall_jump_count: int = 0  # Counter for wall jumps
+@onready var coyote_timer : Timer = $CoyoteTimer
+var was_on_floor : bool = false
 
 func _ready():
 	add_to_group("Player")
@@ -38,10 +40,15 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		if not footstep_timer.is_stopped():
 			footstep_timer.stop()
-
+	
+	was_on_floor = is_on_floor() # coyote time pt 1
 	move_and_slide()
+	if was_on_floor && !is_on_floor() && not Input.is_action_pressed("jump"): coyote_timer.start()
+	
 	update_animation_parameters()
 	update_facing_direction()
+	
+	
 
 func update_animation_parameters():
 	animation_tree.set("parameters/move/blend_position", direction.x)

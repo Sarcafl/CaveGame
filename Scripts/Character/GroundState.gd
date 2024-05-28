@@ -17,7 +17,7 @@ var wall_slide_gravity = 50
 var is_wall_sliding = false
 
 func state_process(delta):
-	if not character.is_on_floor() and not character.is_on_wall():
+	if not character.is_on_floor() and not character.is_on_wall() and character.coyote_timer.is_stopped():
 		character.state_machine.switch_states(air_state)
 	elif is_wall_sliding or (character.is_on_wall() and (Input.is_action_pressed("left") or Input.is_action_pressed("right"))):
 		is_wall_sliding = true

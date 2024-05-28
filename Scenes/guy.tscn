@@ -971,6 +971,10 @@ landing_state = NodePath("../Landing")
 script = ExtResource("9_j3trq")
 ground_state = NodePath("../Ground")
 
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
 [node name="audio_jump_sound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_6885x")
 volume_db = -3.0
