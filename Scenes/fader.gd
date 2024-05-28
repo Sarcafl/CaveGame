@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var colorRect = $ColorRect
+@onready var animPlayer = $AnimationPlayer
 
 var fading : bool = false
 
@@ -29,7 +30,7 @@ func _fade(time : float, fadeBlack : bool, fadeIn : bool):
 	startColor = Color(c,c,c,startAlpha)
 	endColor = Color(c,c,c,endAlpha)
 	
-	#pingpong = shouldPingPong  shouldPingPong : bool
+	if animPlayer.is_playing(): animPlayer.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -42,3 +43,5 @@ func _process(delta):
 	timer += delta
 	colorRect.modulate = (lerp(startColor, endColor, timer/fadeTime))
 
+func _flashRed():
+	if not fading : animPlayer.play("flash_red")
