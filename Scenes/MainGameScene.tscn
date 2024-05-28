@@ -51,13 +51,6 @@ position = Vector2(1158, 352)
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_l5cav")
 
-[node name="KillZone29" parent="KillZones" instance=ExtResource("9_bv4uo")]
-position = Vector2(1192, 352)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone29"]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_l5cav")
-
 [node name="KillZone30" parent="KillZones" instance=ExtResource("9_bv4uo")]
 position = Vector2(1208, 352)
 
@@ -336,6 +329,8 @@ position = Vector2(1787, -391)
 script = ExtResource("11_tr5fg")
 scenePath = "res://dirt_caveUP.tscn"
 level_name = "Cave"
+fade = null
+fadeBlack = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_8qeej")
@@ -345,6 +340,8 @@ position = Vector2(1789, -55)
 script = ExtResource("11_tr5fg")
 scenePath = "res://dirt_cave.tscn"
 level_name = "Cave"
+fade = null
+fadeBlack = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(0, -16)

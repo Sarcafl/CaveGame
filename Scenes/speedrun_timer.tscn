@@ -4,5 +4,3 @@
 
 [node name="SpeedrunTimer" type="Timer"]
 script = ExtResource("1_ycqai")
-
-[connection signal="timeout" from="." to="." method="_on_timeout"]

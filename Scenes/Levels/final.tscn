@@ -1,26 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://d021cntds0dj5"]
+[gd_scene load_steps=7 format=3 uid="uid://d021cntds0dj5"]
 
 [ext_resource type="PackedScene" uid="uid://cj8q8huctf6ik" path="res://Scenes/Levels/level_three.tscn" id="1_6bhiy"]
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="2_t0blw"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelCompletionTrigger.gd" id="3_0ewl2"]
 [ext_resource type="PackedScene" uid="uid://b15bn2fmpklc7" path="res://timer_stop.tscn" id="4_c2hxg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1yb1"]
-size = Vector2(65, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p5jh"]
+size = Vector2(20, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cie3a"]
+size = Vector2(33, 38)
 
 [node name="FINAL" type="Node2D"]
 
 [node name="level_layout" parent="." instance=ExtResource("1_6bhiy")]
 
 [node name="Guy" parent="." instance=ExtResource("2_t0blw")]
-position = Vector2(-213, -61)
-
-[node name="LevelCompletionTrigger" type="Area2D" parent="."]
-position = Vector2(1504, -1144)
-script = ExtResource("3_0ewl2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelCompletionTrigger"]
-position = Vector2(22.5, 0)
-shape = SubResource("RectangleShape2D_m1yb1")
+position = Vector2(-194, -64)
 
 [node name="TimerSTOP" parent="." instance=ExtResource("4_c2hxg")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1536, -997)
+script = ExtResource("3_0ewl2")
+scenePath = "res://Scenes/end_screen.tscn"
+level_name = "End SCreen"
+fade = null
+fadeBlack = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_4p5jh")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1606, -605)
+script = ExtResource("3_0ewl2")
+scenePath = "res://Scenes/end_screen.tscn"
+level_name = "End Screen Descend"
+fade = null
+fadeBlack = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0.5, -9)
+shape = SubResource("RectangleShape2D_cie3a")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

@@ -22,6 +22,7 @@ SpeedrunTimer="*res://Scenes/speedrun_timer.tscn"
 InputGlobalReset="*res://Scenes/InputGlobalReset.tscn"
 DeathSounds="*res://Scenes/death_sounds.tscn"
 SafeSceneLoader="*res://Scripts/SafeSceneLoader.gd"
+Fader="*res://Scenes/fader.tscn"
 
 [display]
 

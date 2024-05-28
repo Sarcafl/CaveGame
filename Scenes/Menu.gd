@@ -8,7 +8,6 @@ extends Control
 @onready var audio_click = $audio_click
 @onready var audio_back = $audio_back
 
-@onready var fader = $Fader/ColorRect
 var waitTime : float = 1.2
 var timer : float = 0
 
@@ -24,6 +23,7 @@ func _on_play_pressed():
 	sceneChanging = true
 	
 	audio_play.play()
+	Fader._fade(1.1, true, true)
 	
 func _on_options_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/OptionsMenu.tscn")
@@ -46,14 +46,14 @@ func _on_quit_pressed():
 func _process(delta):
 	if not sceneChanging : return
 	
-	if timer < waitTime and targetScene.contains("zero") : 
+	if timer < waitTime: 
 		timer += delta
-		fader.modulate = (lerp(Color(0,0,0,0), Color(0,0,0,1), timer/waitTime))
 		return
 	
 	sceneChanging = false;
 	timer = 0
 	
 	get_tree().change_scene_to_file(targetScene)
+	Fader._fade(0.5, true, false)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://d3ve7kcm0tm6g"]
+[gd_scene load_steps=131 format=3 uid="uid://d3ve7kcm0tm6g"]
 
 [ext_resource type="Script" path="res://Scripts/Character/CharacterBody2D.gd" id="1_otn7k"]
 [ext_resource type="Texture2D" uid="uid://2n7qfjnjp63p" path="res://Jupiner/Player/CaveGuy-Sheet01.png" id="2_8cab8"]
@@ -72,8 +72,10 @@
 [ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="72_m82w6"]
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="73_ea6og"]
 [ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="74_36c1d"]
+[ext_resource type="Texture2D" uid="uid://ce5jqg3caoak0" path="res://Jupiner/Stopwatch.png" id="74_fbgyx"]
 [ext_resource type="PackedScene" uid="uid://ckyks25nk57vi" path="res://Jupiner/Candle/candle.tscn" id="74_ug3pn"]
 [ext_resource type="PackedScene" uid="uid://coibvc7bn1suq" path="res://level_test_debug.tscn" id="75_kmh6u"]
+[ext_resource type="FontFile" uid="uid://dcss2hcegpd71" path="res://Assets/Font/MinimalPixel v2.ttf" id="75_y4tsk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ns7f"]
 radius = 7.07107
@@ -919,6 +921,12 @@ point_count = 4
 offsets = PackedFloat32Array(0, 0.233533, 0.532934, 0.628743, 0.784431, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.311377, 0.311377, 0.311377, 1, 0.0878244, 0.0878244, 0.0878244, 1, 0.465966, 0.465966, 0.465966, 1, 0.40741, 0.40741, 0.40741, 1, 1, 1, 1, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_rb7ey"]
+font = ExtResource("75_y4tsk")
+font_size = 14
+outline_size = 6
+outline_color = Color(0.0624, 0.1068, 0.24, 1)
+
 [node name="Guy" type="CharacterBody2D"]
 collision_mask = 5
 script = ExtResource("1_otn7k")
@@ -1094,14 +1102,31 @@ position = Vector2(-4, 15)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("74_36c1d")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -195.0
+offset_top = -117.0
+offset_right = -142.0
+offset_bottom = -58.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 3
+position = Vector2(35, 35)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("74_fbgyx")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Sprite2D"]
+z_index = 4
+offset_left = -18.6667
+offset_top = -2.66667
+offset_right = 38.3333
+offset_bottom = 11.3333
+scale = Vector2(0.7, 0.7)
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_rb7ey")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="level_layout" parent="." instance=ExtResource("75_kmh6u")]
 position = Vector2(716, -252)

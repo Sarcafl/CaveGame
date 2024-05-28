@@ -3,6 +3,10 @@ extends Area2D
 @export var scenePath: String = ""
 @export var level_name: String = ""
 
+@export var fade : bool = true
+@export var fadeBlack : bool = true
+var fadeTime = 0.4
+
 func _ready():
 	pass
 
@@ -12,4 +16,5 @@ func _on_body_entered(body):
 		call_deferred("_change_scene")
 
 func _change_scene():
-	get_tree().change_scene_to_file(scenePath)
+	if not fade : SafeSceneLoader.loadScene(scenePath)
+	else : SafeSceneLoader._loadWithFade(scenePath, fadeTime, fadeBlack, level_name)

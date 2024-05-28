@@ -61,3 +61,15 @@ func get_total_time():
 	for entry in leaderboard_data:
 		total_time += entry["Time"]
 	return total_time
+
+
+func _formatTime(time : float) -> String:
+	var minutes = time / 60
+	var seconds = fmod(time, 60)
+	var milliseconds = fmod(time, 1) * 100
+	
+	var timeText : String = "%02d:%02d:%02d" % [minutes, seconds, milliseconds]
+	return timeText
+
+func _getFormattedTime() -> String:
+	return _formatTime(speedrun_time)

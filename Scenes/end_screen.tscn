@@ -1,0 +1,169 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpfm2lkii78aq"]
+
+[ext_resource type="Texture2D" uid="uid://ce5jqg3caoak0" path="res://Jupiner/Stopwatch.png" id="1_bt7ln"]
+[ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="1_im4t3"]
+[ext_resource type="Script" path="res://Scenes/end_screen.gd" id="1_px5gm"]
+[ext_resource type="FontFile" uid="uid://dcss2hcegpd71" path="res://Assets/Font/MinimalPixel v2.ttf" id="2_npgqt"]
+[ext_resource type="AudioStream" uid="uid://cg4m53tyuw2rc" path="res://Assets/Alfie Music and sfx/sfx/main_menu/menu_startgame.wav" id="5_41la4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xu6m"]
+font = ExtResource("1_im4t3")
+font_size = 30
+font_color = Color(0.37, 0.37, 0.37, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ov7vd"]
+font = ExtResource("2_npgqt")
+font_size = 52
+outline_size = 20
+outline_color = Color(0.0624, 0.1068, 0.24, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sinq7"]
+font = ExtResource("1_im4t3")
+font_size = 10
+font_color = Color(0.37, 0.37, 0.37, 1)
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_px5gm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1432.0
+offset_top = -887.0
+offset_right = 2595.0
+offset_bottom = 1546.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 61.0
+offset_right = 696.0
+offset_bottom = 513.0
+alignment = 1
+
+[node name="MainLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "You found
+a way up!"
+label_settings = SubResource("LabelSettings_5xu6m")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Stopwatch" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_bt7ln")
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Stopwatch"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WatchLabel" type="Label" parent="VBoxContainer/Stopwatch/CenterContainer"]
+layout_mode = 2
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_ov7vd")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_im4t3")
+text = "RETRY"
+
+[node name="Quit" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_im4t3")
+text = "QUIT"
+
+[node name="Credits" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 564.0
+offset_right = 71.0
+offset_bottom = 604.0
+
+[node name="Credits-01" type="Label" parent="Credits"]
+layout_mode = 2
+anchor_left = -14.5378
+anchor_top = -3.14722
+anchor_right = -14.5378
+anchor_bottom = -3.14722
+offset_left = 14.375
+offset_top = -22.5926
+offset_right = 1082.51
+offset_bottom = 82.8889
+text = "Programmer, UI: 
+@FlowConstruct/Crendom  
+youtube.com/channel/UCSLmuJcCM24g__8KDV_ZHEA
+crendom.itch.io"
+label_settings = SubResource("LabelSettings_sinq7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits-02" type="Label" parent="Credits"]
+layout_mode = 2
+anchor_left = -14.3128
+anchor_top = -1.64722
+anchor_right = -14.3128
+anchor_bottom = -1.64722
+offset_left = 14.375
+offset_top = -22.5926
+offset_right = 1082.51
+offset_bottom = 82.8889
+text = "Music / SFX: 
+@Alfie  
+alfiemorris.itch.io
+x.com/alfiesound"
+label_settings = SubResource("LabelSettings_sinq7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits-03" type="Label" parent="Credits"]
+layout_mode = 2
+anchor_left = -0.784375
+anchor_top = 1.03981
+anchor_right = -0.0378479
+anchor_bottom = 1.12778
+offset_left = 14.375
+offset_top = -22.5926
+offset_right = 1082.51
+offset_bottom = 82.8889
+text = "Art, Level Design : 
+@Monthbug
+monthbug.itch.io
+twitter / insta: @squishthing"
+label_settings = SubResource("LabelSettings_sinq7")
+metadata/_edit_use_anchors_ = true
+
+[node name="audio_play" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_41la4")
+volume_db = -8.0
+bus = &"SFX"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
