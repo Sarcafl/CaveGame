@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpfm2lkii78aq"]
+[gd_scene load_steps=10 format=3 uid="uid://dpfm2lkii78aq"]
 
 [ext_resource type="Texture2D" uid="uid://ce5jqg3caoak0" path="res://Jupiner/Stopwatch.png" id="1_bt7ln"]
 [ext_resource type="FontFile" uid="uid://c848rr8k6es68" path="res://Assets/Font/PixelOperator8-Bold.ttf" id="1_im4t3"]
 [ext_resource type="Script" path="res://Scenes/end_screen.gd" id="1_px5gm"]
 [ext_resource type="FontFile" uid="uid://dcss2hcegpd71" path="res://Assets/Font/MinimalPixel v2.ttf" id="2_npgqt"]
 [ext_resource type="AudioStream" uid="uid://cg4m53tyuw2rc" path="res://Assets/Alfie Music and sfx/sfx/main_menu/menu_startgame.wav" id="5_41la4"]
+[ext_resource type="AudioStream" uid="uid://caimmgqvwxhif" path="res://Assets/Alfie Music and sfx/music/birds_loop.ogg" id="6_kn0f5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5xu6m"]
 font = ExtResource("1_im4t3")
@@ -163,6 +164,11 @@ metadata/_edit_use_anchors_ = true
 [node name="audio_play" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_41la4")
 volume_db = -8.0
+bus = &"SFX"
+
+[node name="audio_birds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_kn0f5")
+volume_db = 3.0
 bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]

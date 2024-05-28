@@ -2,6 +2,8 @@ extends Control
 
 
 @onready var audio_play = $audio_play
+@onready var audio_birds = $audio_birds
+
 @onready var watchLabel = $VBoxContainer/Stopwatch/CenterContainer/WatchLabel
 @onready var mainLabel = $VBoxContainer/MainLabel
 @onready var colorRect = $ColorRect
@@ -15,12 +17,15 @@ var targetScene : String = ""
 func _ready():
 	#var runTime = SpeedrunTimer.time
 	watchLabel.text = SpeedrunTimer._getFormattedTime()
+	SpeedrunTimer.reset_timer()
 	#Fader._fade(0.5, false, false)
 	
 	match(SafeSceneLoader.endingIndex):
 		0: 
 			mainLabel.text = "You found\na way up!"
 			colorRect.color = Color.WHITE
+			Ambience.stop()
+			audio_birds.play()
 		1:
 			mainLabel.text = "You descend\ninto the cave"
 			colorRect.color = Color.BLACK

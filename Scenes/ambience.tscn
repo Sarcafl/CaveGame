@@ -6,4 +6,4 @@
 stream = ExtResource("1_iouhp")
 volume_db = -6.0
 autoplay = true
-bus = &"Music"
+bus = &"SFX"

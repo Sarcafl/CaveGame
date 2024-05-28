@@ -15,7 +15,7 @@ class_name AirState
 
 var has_double_jumped = false
 var is_wall_sliding = false
-var fall_time: float = 0.5  # Time after which free fall animation should be triggered
+var fall_time: float = 0.12  # Time after which free fall animation should be triggered
 var fall_timer: float = 0.0
 
 func state_process(delta):
@@ -31,11 +31,9 @@ func state_process(delta):
 			playback.travel(free_fall_animation)
 
 func state_input(event: InputEvent):
-	if event.is_action_pressed("jump"):
-		if is_wall_sliding:
-			perform_wall_jump()
-		elif not has_double_jumped:
-			double_jump()
+	if event.is_action_pressed("jump"): 
+		if is_wall_sliding: perform_wall_jump()
+		elif not has_double_jumped: double_jump()
 
 func on_enter():
 	fall_timer = 0.0  # Reset the fall timer

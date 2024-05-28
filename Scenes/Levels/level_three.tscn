@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cj8q8huctf6ik"]
+[gd_scene load_steps=31 format=3 uid="uid://cj8q8huctf6ik"]
 
 [ext_resource type="Texture2D" uid="uid://c5supv0udd8lc" path="res://Jupiner/MainTileset.png" id="1_gqmic"]
 [ext_resource type="Texture2D" uid="uid://d0vpfd0iee6vr" path="res://Jupiner/Tilesets/CrystalTileset.png" id="2_4ma3h"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dedgngfpvempw" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_decorative_waterfall.wav" id="12_5pqle"]
 [ext_resource type="AudioStream" uid="uid://k7u3u5mgkoph" path="res://Assets/Alfie Music and sfx/escape_loop_01.wav" id="13_mmeve"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="14_0rtqq"]
+[ext_resource type="AudioStream" uid="uid://d0caxl61dh2q0" path="res://Assets/Alfie Music and sfx/music/wind_loop.ogg" id="14_vbivj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qp3j"]
 texture = ExtResource("1_gqmic")
@@ -1791,7 +1792,7 @@ stream = ExtResource("10_ig4o0")
 volume_db = 8.0
 pitch_scale = 0.9
 autoplay = true
-max_distance = 1000.0
+max_distance = 300.0
 panning_strength = 0.0
 bus = &"SFX"
 
@@ -2290,7 +2291,7 @@ position = Vector2(-65, -197)
 stream = ExtResource("12_5pqle")
 volume_db = -24.352
 autoplay = true
-max_distance = 500.0
+max_distance = 400.0
 panning_strength = 1.5
 bus = &"SFX"
 
@@ -2300,7 +2301,7 @@ stream = ExtResource("12_5pqle")
 volume_db = -26.0
 pitch_scale = 1.3
 autoplay = true
-max_distance = 500.0
+max_distance = 400.0
 panning_strength = 1.5
 bus = &"SFX"
 
@@ -2310,7 +2311,7 @@ stream = ExtResource("12_5pqle")
 volume_db = -26.0
 pitch_scale = 1.4
 autoplay = true
-max_distance = 500.0
+max_distance = 400.0
 panning_strength = 1.5
 bus = &"SFX"
 
@@ -2319,7 +2320,7 @@ position = Vector2(1009, -840)
 stream = ExtResource("12_5pqle")
 volume_db = -26.0
 autoplay = true
-max_distance = 500.0
+max_distance = 400.0
 panning_strength = 1.5
 bus = &"SFX"
 
@@ -2339,7 +2340,7 @@ stream = ExtResource("12_5pqle")
 volume_db = -33.0
 pitch_scale = 1.6
 autoplay = true
-max_distance = 600.0
+max_distance = 400.0
 panning_strength = 1.5
 bus = &"SFX"
 
@@ -2350,6 +2351,16 @@ volume_db = -10.0
 pitch_scale = 0.85
 autoplay = true
 max_distance = 2500.0
+panning_strength = 0.5
+bus = &"SFX"
+
+[node name="ambience_wind" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2(1535, -1216)
+stream = ExtResource("14_vbivj")
+volume_db = 10.0
+pitch_scale = 0.85
+autoplay = true
+max_distance = 1500.0
 panning_strength = 0.5
 bus = &"SFX"
 

@@ -62,7 +62,7 @@ bus_name = "SFX"
 [node name="MUSIC" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_iqhq7")
-text = "ATMOSPHERE"
+text = "MUSIC"
 
 [node name="HSlider2" type="HSlider" parent="MarginContainer/VBoxContainer/MUSIC"]
 layout_mode = 2

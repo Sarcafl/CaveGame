@@ -15,6 +15,7 @@ var sceneChanging : bool = false
 var targetScene : String = ""
 
 func _ready():
+	if not Ambience.playing : Ambience.play()
 	Music.stopMusic()
 	pass
 
