@@ -17,7 +17,7 @@ var targetScene : String = ""
 func _ready():
 	if not Ambience.playing : Ambience.play()
 	Music.stopMusic()
-	pass
+	play_button.grab_focus()
 
 func _on_play_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/Levels/level_zero.tscn")

@@ -168,7 +168,6 @@ bus = &"SFX"
 
 [node name="audio_birds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kn0f5")
-volume_db = 3.0
 bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
