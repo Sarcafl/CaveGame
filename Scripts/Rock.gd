@@ -7,6 +7,7 @@ extends RigidBody2D
 @onready var ground_timer = $GroundTimer  # Ensure this Timer node is added to the scene
 @onready var audio_fall = $audio_fall
 @onready var audio_impact = $audio_impact
+@onready var audio_jump = $audio_jump
 
 var player_near = false
 var fall_timer = 0.0
@@ -45,6 +46,7 @@ func _on_jump_area_body_entered(body):
 	if body.name == "Guy":
 		var player = body as CharacterBody2D
 		player.velocity = Vector2(player.velocity.x, -400)  # Apply a high jump
+		audio_jump.play()
 
 func _on_ground_timer_timeout():
 	queue_free()  # Delete the rock after the timer ends
