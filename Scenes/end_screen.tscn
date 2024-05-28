@@ -111,10 +111,10 @@ offset_bottom = 604.0
 
 [node name="Credits-01" type="Label" parent="Credits"]
 layout_mode = 2
-anchor_left = -14.5378
-anchor_top = -3.14722
-anchor_right = -14.5378
-anchor_bottom = -3.14722
+anchor_left = 16.9906
+anchor_top = 1.03981
+anchor_right = 16.9906
+anchor_bottom = 1.03981
 offset_left = 14.375
 offset_top = -22.5926
 offset_right = 1082.51
@@ -128,10 +128,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Credits-02" type="Label" parent="Credits"]
 layout_mode = 2
-anchor_left = -14.3128
-anchor_top = -1.64722
-anchor_right = -14.3128
-anchor_bottom = -1.64722
+anchor_left = 7.54063
+anchor_top = 1.03981
+anchor_right = 7.54063
+anchor_bottom = 1.03981
 offset_left = 14.375
 offset_top = -22.5926
 offset_right = 1082.51

@@ -34,8 +34,8 @@ func _on_options_pressed():
 	audio_click.play()
 	
 func _on_credits_pressed():
-	#get_tree().change_scene_to_file("res://Scenes/credits.tscn")
-	targetScene = "res://Scenes/credits.tscn"
+	#get_tree().change_scene_to_file("res://Scenes/creditsTOMENU.tscn")
+	targetScene = "res://Scenes/creditsTOMENU.tscn"
 	get_tree().change_scene_to_file(targetScene)
 	#sceneChanging = true
 	
