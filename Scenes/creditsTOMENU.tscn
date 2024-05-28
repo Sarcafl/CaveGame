@@ -21,7 +21,7 @@ offset_right = 670.0
 offset_bottom = 381.0
 
 [node name="MenuArtwork" type="Sprite2D" parent="Panel"]
-position = Vector2(90, -349)
+position = Vector2(75, 260)
 scale = Vector2(1.4787, 1.24211)
 texture = ExtResource("2_0pyhg")
 
