@@ -94,9 +94,10 @@ bus_name = "Master"
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_iqhq7")
-text = "Credits"
+text = "CREDITS"
 
 [node name="Leaderboard" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_iqhq7")
 text = "Leaderboard"
@@ -106,7 +107,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_iqhq7")
 text = "BACK"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BACK" to="." method="_on_back_pressed"]

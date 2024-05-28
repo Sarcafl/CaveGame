@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dekpr1jetst0i"]
+[gd_scene load_steps=12 format=3 uid="uid://dekpr1jetst0i"]
 
 [ext_resource type="PackedScene" uid="uid://d3ve7kcm0tm6g" path="res://Scenes/guy.tscn" id="1_3oal4"]
 [ext_resource type="PackedScene" uid="uid://duiw6db2u8gyx" path="res://Scenes/Levels/level_one.tscn" id="4_e0and"]
@@ -11,6 +11,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5cav"]
 size = Vector2(15, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2a33"]
+size = Vector2(6.5, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qeej"]
 size = Vector2(20, 52)
@@ -36,6 +39,20 @@ position = Vector2(296, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone"]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_l5cav")
+
+[node name="KillZone29" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(823, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone29"]
+position = Vector2(-4.25, 5.5)
+shape = SubResource("RectangleShape2D_a2a33")
+
+[node name="KillZone36" parent="KillZones" instance=ExtResource("9_bv4uo")]
+position = Vector2(864, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/KillZone36"]
+position = Vector2(-4.25, 5.5)
+shape = SubResource("RectangleShape2D_a2a33")
 
 [node name="KillZone27" parent="KillZones" instance=ExtResource("9_bv4uo")]
 position = Vector2(1141, 352)
