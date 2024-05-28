@@ -27,7 +27,7 @@ func _on_play_pressed():
 	
 func _on_options_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/OptionsMenu.tscn")
-	targetScene = "res://Scenes/OptionsMenu.tscn"
+	targetScene = "res://Scenes/optionsmenu.tscn"
 	get_tree().change_scene_to_file(targetScene)
 	#sceneChanging = true
 	
