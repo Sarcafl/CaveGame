@@ -138,6 +138,7 @@ texture = ExtResource("4_47e0j")
 position = Vector2(0, 467)
 script = ExtResource("7_wfgdq")
 scenePath = "res://Scenes/MainGameScene.tscn"
+level_name = "Start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_v73sp")

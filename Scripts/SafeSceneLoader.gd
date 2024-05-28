@@ -23,6 +23,7 @@ func _loadWithFade(scenePath : String, fadeTime : float, fadeBlack : bool, level
 		else : 
 			endingIndex = 1
 	
+	Music.loadingLevel(levelName)
 	Fader._fade(fadeTime, fadeColor, true)
 	await get_tree().create_timer(0.5).timeout
 	

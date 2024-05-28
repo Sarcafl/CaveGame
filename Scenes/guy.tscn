@@ -1016,6 +1016,7 @@ position = Vector2(8, -4)
 zoom = Vector2(2.8, 2.8)
 
 [node name="ui_manager" type="Control" parent="Camera2D"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

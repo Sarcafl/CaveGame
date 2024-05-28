@@ -15,6 +15,7 @@ var sceneChanging : bool = false
 var targetScene : String = ""
 
 func _ready():
+	Music.stopMusic()
 	pass
 
 func _on_play_pressed():

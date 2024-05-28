@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://oyyfq6pmiehy"]
+
+[ext_resource type="AudioStream" uid="uid://vptxu2jyn512" path="res://Assets/Alfie Music and sfx/music/level_one_music.ogg" id="1_7e7h4"]
+[ext_resource type="Script" path="res://Scenes/music.gd" id="1_qacgd"]
+
+[node name="Music" type="Node" node_paths=PackedStringArray("music")]
+script = ExtResource("1_qacgd")
+music = [NodePath("audio_one"), NodePath("audio_two")]
+
+[node name="audio_one" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_7e7h4")
+volume_db = -6.0
+bus = &"Music"
+
+[node name="audio_two" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_7e7h4")
+volume_db = -6.0
+bus = &"Music"

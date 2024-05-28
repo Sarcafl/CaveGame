@@ -23,6 +23,7 @@ InputGlobalReset="*res://Scenes/InputGlobalReset.tscn"
 DeathSounds="*res://Scenes/death_sounds.tscn"
 SafeSceneLoader="*res://Scripts/SafeSceneLoader.gd"
 Fader="*res://Scenes/fader.tscn"
+Music="*res://Scenes/music.tscn"
 
 [display]
 

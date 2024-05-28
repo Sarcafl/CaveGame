@@ -343,8 +343,6 @@ position = Vector2(1787, -391)
 script = ExtResource("11_tr5fg")
 scenePath = "res://dirt_caveUP.tscn"
 level_name = "Cave"
-fade = null
-fadeBlack = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_8qeej")
@@ -354,8 +352,6 @@ position = Vector2(1789, -55)
 script = ExtResource("11_tr5fg")
 scenePath = "res://dirt_cave.tscn"
 level_name = "Cave"
-fade = null
-fadeBlack = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(0, -16)
