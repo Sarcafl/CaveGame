@@ -5,14 +5,12 @@ extends Sprite2D
 var timer : float = 0
 
 var index : int = 0
-var candlesCollected = 0
 
 func _ready():
 	CandleManager.candle_collected.connect(_on_candle_collected)
 
 func _on_candle_collected():
-	candlesCollected += 1
-	scale *= 1.5 - (candlesCollected/10)
+	scale *= 1.5
 
 func _process(delta):
 	timer +=  delta
