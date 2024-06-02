@@ -35,7 +35,7 @@ func _reloadScene():
 	else : loadingScene = true
 	
 	var sceneName = get_tree().get_current_scene().get_name()
-	print(sceneName)
+	#print(sceneName)
 	if sceneName.contains("Main") : SpeedrunTimer.reset_timer()
 	
 	get_tree().reload_current_scene()

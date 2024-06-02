@@ -928,7 +928,7 @@ outline_size = 6
 outline_color = Color(0.0624, 0.1068, 0.24, 1)
 
 [node name="Guy" type="CharacterBody2D"]
-collision_mask = 5
+collision_mask = 15
 script = ExtResource("1_otn7k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
