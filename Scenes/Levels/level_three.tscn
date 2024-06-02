@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cj8q8huctf6ik"]
+[gd_scene load_steps=23 format=3 uid="uid://cj8q8huctf6ik"]
 
 [ext_resource type="TileSet" uid="uid://djkg5107g5ew7" path="res://Jupiner/Tilesets/MainTileset02.tres" id="1_bakv3"]
 [ext_resource type="Texture2D" uid="uid://d0vpfd0iee6vr" path="res://Jupiner/Tilesets/CrystalTileset.png" id="2_4ma3h"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dedgngfpvempw" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_decorative_waterfall.wav" id="12_5pqle"]
 [ext_resource type="AudioStream" uid="uid://k7u3u5mgkoph" path="res://Assets/Alfie Music and sfx/escape_loop_01.wav" id="13_mmeve"]
 [ext_resource type="PackedScene" uid="uid://cnpra0murgydy" path="res://Scenes/rock.tscn" id="14_0rtqq"]
+[ext_resource type="PackedScene" uid="uid://ci52k7kctw6sk" path="res://Scenes/candle_collectible.tscn" id="14_svj1e"]
 [ext_resource type="AudioStream" uid="uid://d0caxl61dh2q0" path="res://Assets/Alfie Music and sfx/music/wind_loop.ogg" id="14_vbivj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pratu"]
@@ -346,3 +347,9 @@ position = Vector2(194, -872)
 [node name="Rock5" parent="Rocks" instance=ExtResource("14_0rtqq")]
 position = Vector2(223, -872)
 fall_delay = 2.0
+
+[node name="Candle-Collectible2" parent="." instance=ExtResource("14_svj1e")]
+position = Vector2(8, -104)
+
+[node name="Candle-Collectible3" parent="." instance=ExtResource("14_svj1e")]
+position = Vector2(975, -744)

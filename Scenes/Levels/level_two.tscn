@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dahfaomhhb5wd"]
+[gd_scene load_steps=17 format=3 uid="uid://dahfaomhhb5wd"]
 
 [ext_resource type="TileSet" uid="uid://djkg5107g5ew7" path="res://Jupiner/Tilesets/MainTileset02.tres" id="1_m484s"]
 [ext_resource type="Texture2D" uid="uid://odk6avyshdha" path="res://Jupiner/Tiles-Grass.png" id="3_2ljgo"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dedgngfpvempw" path="res://Assets/Alfie Music and sfx/sfx/environment_water/environment_decorative_waterfall.wav" id="9_v0cp2"]
 [ext_resource type="Texture2D" uid="uid://bks6wjxag0ce6" path="res://Jupiner/Warnings.png" id="10_4nlxj"]
 [ext_resource type="AudioStream" uid="uid://b2qvmr3nt270v" path="res://Assets/Alfie Music and sfx/music/mystical_loop.wav" id="11_7js7j"]
+[ext_resource type="PackedScene" uid="uid://ci52k7kctw6sk" path="res://Scenes/candle_collectible.tscn" id="11_lmxyh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pratu"]
 texture = ExtResource("3_2ljgo")
@@ -235,3 +236,9 @@ max_distance = 200.0
 attenuation = 0.5
 panning_strength = 0.0
 bus = &"SFX"
+
+[node name="Candle-Collectible" parent="." instance=ExtResource("11_lmxyh")]
+position = Vector2(217, -230)
+
+[node name="Candle-Collectible2" parent="." instance=ExtResource("11_lmxyh")]
+position = Vector2(-432, -144)
